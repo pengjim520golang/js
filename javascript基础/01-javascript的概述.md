@@ -47,3 +47,17 @@ ECMAScript是Javascript的组成部分,是Javascript的标准。一般来说我�
 ``` html
 <script type="text/javascript" src="helloword.js"></script>
 ```
+
+# 控制台调试方式
+
+我们在开发中经常需要把调试结果进行输出,在谷歌,火狐或和IE高版本的浏览中有一个名为控制台的调试工具,Javascript在ES5中还提高了专门对控制台进行输出的方法
+
+**使用console.log()进行结果输出**
+
+```html
+<script type="text/javascript">
+     console.log("Hello Javascript");
+     console.log("100+200=",100+200,",300+400=",300+400);
+</script>
+```
+
