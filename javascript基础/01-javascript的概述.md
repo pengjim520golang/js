@@ -28,7 +28,9 @@ ECMAScript是Javascript的组成部分,是Javascript的标准。一般来说我�
 ## 开发工具和调试环境
 
 你可以使用任何一种编辑器进行Javascript的代码编写,例如:EditPlus,SublimeText和HBuilder等。
-并且必须在系统中安装了谷歌浏览器Chrome
+
+必须在系统中安装了谷歌浏览器Chrome
+
 本教程中使用的开发环境:vscode + Chrome
 
 
