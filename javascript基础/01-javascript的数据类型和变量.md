@@ -33,12 +33,16 @@ ECMAScript是Javascript的组成部分,是Javascript的标准。一般来说我�
 
 ## 代码的编写方式
 
-*内部脚本*
+**内部脚本**
 
+```html
 <script type="text/javascript">
 	alert("Hello World");
 </script>
+```
 
-*外部脚本*
+**外部脚本**
 
+``` html
 <script type="text/javascript" src="helloword.js"></script>
+```
