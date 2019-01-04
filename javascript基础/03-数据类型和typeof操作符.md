@@ -116,3 +116,11 @@ Javascript这个语言在诞生之处因为设计比较混乱，使得程序具�
 ![](./images/undefined_null_1.png)
 
 >  == 只比较内容是否相等，不比较类型，===比较内容是否相等的同时也比较类型是否相等，在Javascript开发中我们尽量少使用==去比较值是否相等。
+
+上面显然是不正确的结果,undefined和null是两种不同的基本数据类型,且作用在变量身上的表达的值和含义也不相同。
+
+使用===比较undefined和null的结果返回正确的结果:
+
+![](./images/undefined_null_2.png)
+
+
