@@ -51,3 +51,33 @@ undefined类型只有一个值，即undefined。未初始化的变量，都是un
 
 # typeof操作符
 
+typeof操作符用于返回一个变量或者字面量的类型。
+
+```html
+<script type="text/javascript">
+	var a; 
+	var b = "pengjin"
+	var age = 22
+	var circle = 3.14
+	var bool = false
+	var obj  = null 
+	
+	//undefined
+	console.log("a typeof ",typof a);
+	//string
+	console.log("b typeof ",typof b);
+	//number
+	console.log("age typeof ",typof age);
+	//number
+	console.log("circle typeof ",typof cirlce);
+	//boolean
+	console.log("bool typeof ",typof bool);
+	// object
+	console.log("obj typeof ",typof obj);
+
+</script>
+```
+
+**注意事项:使用typeof null发觉返回值为object,这是为什么呢?**
+
+> 正确的返回结果应该是 "null" ，但这个 bug 由来已久，在 javascript  中已经存在了将近二十年，也许永远也不会修复，因为这牵涉到太多的 Web 系统，修复它会产生更多的 bug,会令许多系统无法正常工作。
