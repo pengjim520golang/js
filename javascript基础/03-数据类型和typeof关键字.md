@@ -33,5 +33,17 @@ null表示一个空对象指针，如果定义的变量准备在将来用于保�
 
 undefined类型只有一个值，即undefined。未初始化的变量，都是undefined类型。
 
+```html
+<script type="text/javascript">
+	var a; //undefine
+	var b = "pengjin" //string
+	var age = 22 //number
+	var circle = 3.14 //number
+	var bool = false // boolean
+	var obj  = null // null
+</script>
+```
 
+以上代码定义的变量都是`值类型`,存放在栈内存中。
 
+![](./images/zhanneicun_1.jpg)
