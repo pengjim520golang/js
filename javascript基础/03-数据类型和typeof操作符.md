@@ -81,3 +81,25 @@ typeof操作符用于返回一个变量或者字面量的类型。
 **注意事项:使用typeof null发觉返回值为object,这是为什么呢?**
 
 > 正确的返回结果应该是 "null" ，但这个 bug 由来已久，在 javascript  中已经存在了将近二十年，也许永远也不会修复，因为这牵涉到太多的 Web 系统，修复它会产生更多的 bug,会令许多系统无法正常工作。
+
+# 引用数据类型
+
+在Javascript中常见引用数据类型`数组`,`函数`,`Object`等类型,这些类型的值一般存放在堆内存中.
+
+```html
+<script type="text/javascript">
+	var person = {
+		name:"张三",
+		age : 33
+	}
+
+	var person2 = person
+
+	person2.name = "李四";
+
+	console.log( person.name )
+	console.log( person2.name )
+	console.log( typeof person )
+</script>
+```
+
