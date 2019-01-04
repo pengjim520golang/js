@@ -106,3 +106,13 @@ typeof操作符用于返回一个变量或者字面量的类型。
 引用类型的变量引用的地址是一样的，一者被修改另一者也会随之发生改变,其内存图如下所示:
 
 ![](./images/duineicun_1.png)
+
+
+# null和undefined的比较运算
+
+
+ == 只比较内容是否相等，不比较类型，===比较内容是否相等的同时也比较类型是否相等，在Javascript开发中我们尽量少使用==去比较值是否相等
+
+Javascript这个语言在诞生之处因为设计比较混乱，使得程序具有一定的bug，其中需要使用null和undefined使用==你会惊奇地发现它返回的结果是true,表示null和undefined的值是相等的。
+
+![](./images/undefined_null_1.png)
