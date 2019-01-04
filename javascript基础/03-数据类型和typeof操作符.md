@@ -124,3 +124,14 @@ Javascript这个语言在诞生之处因为设计比较混乱，使得程序具�
 ![](./images/undefined_null_2.png)
 
 
+# typeof 类型比较运算
+
+我们知道typeof null的返回的结果是object,这个是由javascript的bug造成的，然而你在控制台中运行: typeof null === object 会报错
+
+![](./images/typeof_1.png)
+
+造成上述的原因,是因为object被javascript认为是了一个未声明的变量而typeof null产生的object返回值是一个字符串，因此我们在使用typeof关键类型匹配时需要对希望匹配的结果使用字符串表达式，例如:”object”,”string”等等,参考代码如下所示:
+
+![](./images/typeof_2.png)
+
+![](./images/typeof_3.png)
