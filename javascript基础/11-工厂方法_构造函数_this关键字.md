@@ -1,4 +1,52 @@
-# 工厂方法创建对象
+# this关键字
+
+解析器在调用函数每次都会向函数内部传递进一个隐含的参数,这个隐含的参数就是this。
+this指向的是一个对象，这个对象我们称为函数执行的`上下文对象`。
+
+#### 根据函数的调用方式的不同，this会指向不同的对象
+
+* 1.以函数的形式调用时，this永远都是window
+
+```javascript
+function func(){
+	console.log(this) //返回window
+}
+
+func()
+```
+
+* 2.以方法的形式调用时，this就是调用方法的那个对象
+
+```javascript
+
+function fun(){
+    console.log(this.name);
+}
+			
+var obj = {
+    name:"孙悟空",
+    sayName:fun
+};
+			
+var obj2 = {
+     name:"沙和尚",
+     sayName:fun
+};
+			
+console.log(obj.sayName == fun);
+			
+var name = "全局的name属性";
+			
+//以函数形式调用，this是window
+fun();
+			
+//以方法的形式调用，this是调用方法的对象
+obj.sayName();
+obj2.sayName();
+
+```
+
+# 工厂方法
 
 通常在函数中封装一个对象的生成,通过该函数可以大批量的创建对象,我们成为使用工厂方法创建对象。
 
@@ -99,5 +147,18 @@ zs.getInfo()
 ![](./images/object2.png)
 
 
+#### 使用instanceof可以检查一个对象是否是一个类的实例
+语法：对象 instanceof 构造函数
 
+* 如果是，则返回true，否则返回false
 
+```javascript
+console.log(per instanceof Person);
+console.log(dog instanceof Person);
+```			
+
+所有的对象都是Object的后代，所以任何对象和Object做instanceof检查时都会返回true
+
+```javascript
+console.log(dog instanceof Object);
+```
