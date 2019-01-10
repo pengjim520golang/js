@@ -94,6 +94,9 @@ zs.getInfo()
 
 ```
 
+使用构造函数得到的对象实例均来自于Person类
+
+![](./images/object2.png)
 
 
 
