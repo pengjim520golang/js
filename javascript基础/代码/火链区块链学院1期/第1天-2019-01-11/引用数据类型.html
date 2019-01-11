@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+
+<script>
+
+    
+    var obj = {
+        name:"zhangsan",
+        age : 33,
+        gender:"male"
+    }
+
+    console.log(typeof obj) //typeof 返回object
+
+    console.log("name=",obj.name);
+
+
+
+    var obj2 = obj //把obj赋值给obj2
+
+    console.log("obj2 name=",obj2.name);
+
+    obj2.name = "lisi";
+
+    console.log("修改后的obj2 name=",obj2.name);
+    console.log("修改后obj name=",obj.name);  //lisi
+
+
+
+
+
+</script>
+
+</html>

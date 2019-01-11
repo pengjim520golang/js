@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    var strName;
+    console.log(typeof strName); // typeof 返回undefined,有些浏览器会返回string
+
+    var intX = 100; 
+    console.log(typeof intX); // typeof 返回 number
+
+    var bool = true 
+    console.log(typeof bool); // typeof 返回boolean
+
+    var strUndefined = "undefined"; // 
+    console.log(typeof strUndefined); // typeof 返回string
+
+    strUndefined = undefined 
+    console.log(typeof strUndefined); // typeof 返回undefined
+
+
+    var objNull = null 
+    console.log(typeof objNull); // typeof 正确应该返回null，然而返回的是object
+
+
+
+</script>
+</html>
