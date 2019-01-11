@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    var x = 100
+    var res = x++ //后自增：先使用，再自增1
+    /* 
+    var res = x //res = 100
+    x=x+1      //x=101
+    */
+    console.log("res=",res,"x=",x) //res =101 x=100
+
+
+
+    var y = 100
+    var result = ++y //先自增：先自增，后使用
+    /*
+    y = y + 1 // 101
+    var result = y // 101
+
+    */
+    console.log("result=",result,"y=",y) //result=101 y=101
+
+
+
+
+    var z = 100
+    var res = z-- 
+    /**
+     var z = 100
+     var res = z //100 //后自减：先使用，再自减1
+     z=z-1 // 99
+    **/
+    console.log("res=",res,"z=",z) //res = 100 z=99
+
+
+    var w = 100
+    var result = --w //前自减：先自减1,再使用
+    /* 
+    w = w - 1  //99
+    var result = w //99
+
+    */
+    console.log("result=",result,"w=",w) //result=99,w=99
+
+
+
+</script>
+</html>
