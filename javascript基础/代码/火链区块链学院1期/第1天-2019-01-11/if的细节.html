@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    var strName = "firelinks"; //string
+    strName = "";//空串,false
+    strName = "    ";//空白字符串,true
+    strName = "0" // true
+    strName = 0 //false
+    strName = {} //true
+
+    strName = null  //false
+    strName = undefined //false
+
+
+    
+
+    console.log(typeof strName);
+
+    //()里面会进行隐式数据类型转换(boolean),转换为true: 非空字符串 非0数字 true 任何对象
+    //                                  转换成false: 空字符串 0 false null undefined
+    if(strName){
+        console.log("这是true的运行结果") //执行这里
+    }else{
+        console.log("这是false的运行结果")
+    }
+</script>
+</html>

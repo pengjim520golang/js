@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var num = 80.3
+
+    /**
+     * 60 == 6
+     * 70 == 7
+     * 80 == 8
+     * 90 == 9
+     * 100 == 10
+     * 
+     * 80.5/10 = 8  parseInt()
+     * 
+     */
+    switch( parseInt(num/10) ){
+        case 6: 
+        case 7:
+        case 8: 
+        case 9:
+        case 10:
+          console.log("合格")
+          break;
+        default: 
+          console.log("不合格")
+    }
+</script>
+</html>
