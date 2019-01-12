@@ -1,0 +1,15 @@
+<script>
+    var obj = new Object();
+    obj.sdfasfasdf = "pengjin"
+    obj[100] = "这是第1条新闻"  //obj[100] 
+    obj["张三"] = "zhangsan"
+    obj["-$#%%#"]="firelinks"//不建议
+    console.log( obj.sdfasfasdf,obj[100],obj["张三"],obj["-$#%%#"] )
+
+
+    //如果希望知道一个属性是否存在于一个对象当中使用in运算符
+    console.log( "name" in obj ) 
+    obj.age = 44
+    console.log( "age" in obj ) 
+
+</script>

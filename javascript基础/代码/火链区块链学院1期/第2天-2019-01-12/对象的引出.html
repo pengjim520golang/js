@@ -1,0 +1,45 @@
+<script>
+    //定义一个用户的信息使用变量
+    /*
+    var username = "张三"
+    var age = 43
+    var gender = "male"
+    */
+    //变量都是独立的，没有任何的关联。所以我们就需要使用对象把数据作为一个整体来开发
+    //定义对象在js当中有2种方式:
+    //1.使用new关键字  2.使用语法糖方式{}
+    //Object实际上是js提供的一个类，是所有对象的祖先，Object的数据类型是object,object是数据类型,Object是类
+    //Object()我们又称为构造函数,因为在js当中实际上有一个预定义函数function Object(){.....}
+    var zs = new Object(); //new就是调用Object构造函数
+
+    //为对象建立属性语法: 对象名.属性名 = 。。。
+    zs.username = "zhangsan"
+    zs.age = 44
+    zs.gender = "male"
+    console.log(zs,typeof zs)
+
+
+    //访问对象的属性: 对象名.属性名
+
+    console.log(zs.username,zs.age,zs.gender)
+
+     //修改对象属性语法: 对象名.属性名 = 。。。
+
+     zs.age = 48 
+     console.log(zs.username,zs.age,zs.gender)
+
+
+     //访问一个不存在的属性
+
+     console.log(zs.hello) //undefined
+
+     //删除一个对象的属性
+
+     delete zs.gender 
+     console.log(zs.username,zs.age,zs.gender)
+
+
+
+
+ 
+</script>

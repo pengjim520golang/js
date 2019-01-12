@@ -1,0 +1,31 @@
+<script>
+    var num = -1234.343
+    console.log( Boolean(num),typeof Boolean(num) )
+
+    num = 0
+    console.log( Boolean(num),typeof Boolean(num) )
+
+    num = NaN
+    console.log( Boolean(num),typeof Boolean(num) )
+
+
+    var str = ""
+    console.log( Boolean(str),typeof Boolean(str) )
+
+    str = "   "
+    console.log( Boolean(str),typeof Boolean(str) )
+
+
+    var a = null; //false
+    a = Boolean(a);
+    console.log(a)	
+
+    a = undefined; //false
+    a = Boolean(a);
+    console.log(a)
+
+    a = {name:"firelinks"}
+    a = Boolean(a);
+    console.log(a)
+
+</script>

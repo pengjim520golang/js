@@ -1,0 +1,30 @@
+<script>
+    var strNum = "123px"; //string 
+    var srcHeight = "100px"; //string
+
+    strNum = parseInt(strNum)//number
+    srcHeight = parseInt(srcHeight)//number
+
+    //parseInt：
+
+    // 1.把string的有效数字取出
+    if (!isNaN(strNum) && !isNaN(srcHeight))
+    {
+        console.log( strNum + srcHeight )
+    }else{
+        console.log( strNum , srcHeight )
+    }
+    
+
+    // 2.对于string类型取有效数字，会进行全局扫描直到遇到字符串就停止扫描
+    var strNum2 = "111p234x343ix" 
+    strNum2 = parseInt(strNum2)
+    console.log( strNum2 )
+
+    // 3.如果无法转换则是NaN 
+    var strNum3 = "p23423c343"
+    strNum3 = parseInt(strNum3)
+    console.log( strNum3 )
+
+
+</script>

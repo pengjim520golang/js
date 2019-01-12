@@ -1,0 +1,21 @@
+<script>
+
+    console.log( Number(undefined),typeof  Number(undefined) ); //NaN(not a number),NaN是number类型
+
+    console.log( Number(null),typeof  Number(null) ); //0,0是number类型
+
+
+    if(NaN){
+        console.log("true")
+    }else{
+        console.log("false")
+    }
+
+    // isNaN()判断一个number类型的值是否为NaN ,是NaN则返回true,不是NaN则返回false
+    if( isNaN( Number(undefined) ) ){
+        console.log("true")
+    }else{
+        console.log("false")
+    }
+
+</script>

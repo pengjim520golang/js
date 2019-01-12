@@ -1,0 +1,40 @@
+<script>
+
+    /*　number to string */
+    var num = 1000;
+    console.log( typeof num ); //number 
+
+    //toString()方法和String()不会修改原来变量的数据类型
+    var strNum = num.toString()
+    console.log( typeof num.toString() ); //string
+    console.log( typeof String(num) ); //相当于num.toString()
+    console.log( typeof strNum ); //string
+
+
+   /* boolean to string 
+        -把true变成＂true＂
+        -把false变成＂false＂
+   */
+   var bool = false 
+   console.log( typeof bool.toString() ); //string
+   console.log( typeof String(bool) );  //相当于bool.toString()
+ 
+  /**
+     null和undefined转成string
+       -null和undefined转成string就是转为"null"和"undefined"
+       -null和undefined转成string没有toString方法，如果使用toString就会报错
+       -null和undefined转成string要使用String()
+  **/
+
+  var strNull = null  
+  //console.log( typeof strNull.toString() ); //报错
+  console.log( typeof String(strNull) ); //string
+  var strUn = undefined
+  //console.log( typeof strUn.toString() ); //报错
+  console.log( typeof String(strUn) ); //string
+
+
+
+
+
+</script>
