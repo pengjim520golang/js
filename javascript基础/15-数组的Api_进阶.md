@@ -2,8 +2,8 @@
 
 该方法是实例方法,forEach用于遍历数组中的元素,其
 
-* 语法规则：forEach(回调函数,thisArgs),该方法中的回调函数是同步方法
-* 回调函数中的形参: function(value,index,source) 
+* 语法规则：forEach(callback,thisArgs),该方法中的callback是同步方法
+* callback形参: function(value,index,source) 
 
    -value : 数组中的值
 
@@ -42,3 +42,32 @@ arr.forEach(function(v,k,src){
 },{name:"pengjin"})
 ```
 
+# every
+
+该方法是实例方法,方法测试数组的所有元素是否都通过了指定函数的测试
+
+语法:every(callback,thisArgs)
+
+* callback形参: function(value,index,source)
+
+   -value : 数组中的值
+
+   -index : 数组中的索引
+
+   -source : 原数组
+
+* thisArgs: 可选参数。当执行回调 函数时用作this的值,如果省略this则是window
+		
+* 返回值：true false
+		
+* 是否影响老数组：不影响
+
+```javascript
+var arr = [100,"pengjin","sasa","shanshan",["a","b","c"]]
+var bool = arr.every(function(value,index,src){
+	if(typeof value==="string"){
+		return true
+	}
+})
+console.log(bool)
+```
