@@ -59,8 +59,8 @@ console.log( uniqueArr(arr) )
 
 ```javascript
 var arr = [1,2,3,4,4,5,1,1,2,2,3,6,7,8,9,9]
-arr.sort()
-var result = arr.reduce(function(res,item,index){
+
+var result = arr.sort().reduce(function(res,item,index){
 	if(index===0 || res[res.length-1]!==item){
 		res.push(item)
 	}
