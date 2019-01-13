@@ -59,3 +59,40 @@ console.log(arr,res,arr.length)
 res = arr.pop()
 console.log(arr,res,arr.length)
 ```
+
+# shift
+
+该api是一个实例方法,必须要new以后才能使用,shift()方法从数组中删除第1个元素，并返回该元素的值。此方法更改数组的长度
+
+语法：arr.shift(),返回值：从数组中删除的元素(当数组为空时返回undefined)
+> 注意:该方法会修改原来变量的原始值,也就是影响了老数组
+
+```javascript
+var arr = ["pengjin","zhangsan","wangwu"]
+var res = arr.shift()
+console.log(arr,res,arr.length)
+
+res = arr.shift()
+console.log(arr,res,arr.length)
+
+res = arr.shift()
+console.log(arr,res,arr.length)
+
+res = arr.shift()
+console.log(arr,res,arr.length)
+```
+
+# concat
+
+该api是一个实例方法,必须要new以后才能使用，方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。
+
+语法：arr.concat(arr1[, arr2[, ...[, arrN]]])，返回新的 Array 实例
+> 注意:该不会影响了老数组
+
+```javascript
+		var arr =[1,2,1,4];
+		var arr1=[5];
+		var arr2=[6];
+		var result = arr.concat(arr1,arr2);
+		console.log(result,arr,arr1,arr2);
+```
