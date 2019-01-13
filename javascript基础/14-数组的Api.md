@@ -90,9 +90,56 @@ console.log(arr,res,arr.length)
 > 注意:该不会影响了老数组
 
 ```javascript
-		var arr =[1,2,1,4];
-		var arr1=[5];
-		var arr2=[6];
-		var result = arr.concat(arr1,arr2);
-		console.log(result,arr,arr1,arr2);
+var arr =[1,2,1,4];
+var arr1=[5];
+var arr2=[6];
+var result = arr.concat(arr1,arr2);
+console.log(result,arr,arr1,arr2);
 ```
+
+# indexOf
+
+该api是一个实例方法,必须要new以后才能使用，方法返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1。
+
+* 语法：arr.indexOf(searchElement)
+* 参数：searchElement要查找的元素
+* 返回值：首个被找到的元素在数组中的索引位置; 若没有找到则返回 -1
+* 是否影响老数组：不影响
+
+```javascript
+var arr =[1,2,1,4];
+var result = arr.indexOf(1); //0
+console.log(result,arr);
+```
+
+
+# lastIndexOf() 
+
+该api是一个实例方法,必须要new以后才能使用，方法返回指定元素在数组中的最后一个的索引，如果不存在则返回 -1
+
+* 语法：arr.lastIndexOf(searchElement)
+* 参数：searchElement要查找的元素
+* 返回值：数组中最后一个元素的索引，如未找到返回-1
+* 是否影响老数组：不影响
+		
+```javascript
+var arr =[1,2,1,4];
+var result = arr.lastIndexOf(1); //2
+console.log(result,arr);
+```
+
+# join
+
+该api是一个实例方法,必须要new以后才能使用，方法将一个数组的所有元素连接成一个字符串并返回这个字符串
+
+* 语法：arr.join(separator)
+* 参数：separator指定一个字符串来分隔数组的每个元素。如果省略()，数组元素用逗号分隔。默认为 ","。
+* 返回值：一个所有数组元素连接的字符串。如果 arr.length 为0，则返回空字符串
+* 是否影响老数组：不影响
+
+```javascript
+var arr =[1,2,1,4];
+var result = arr.join("&");
+console.log(result,arr);
+```
+
