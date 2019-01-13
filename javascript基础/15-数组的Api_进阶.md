@@ -170,3 +170,43 @@ console.log(arr)
 ```
 
 *sort和reverse细节:它们返回的数组都是一个引用*
+
+# map 
+
+该方法创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果
+
+语法:map(callback,thisArgs)
+
+* callback形参: function(value,index,source)
+
+   -value : 数组中的值
+
+   -index : 数组中的索引
+
+   -source : 原数组
+
+* thisArgs: 可选参数。当执行回调 函数时用作this的值,如果省略this则是window
+
+* 返回值：一个新数组，每个元素都是回调函数的结果。
+		
+* 是否影响老数组：不影响
+
+```javascript
+var arr = [4,6,8]
+var result = arr.map(function(item){
+	return item**2
+})
+console.log(arr,result)
+```
+
+把数据`[{key:1,value:10},{key:2,value:300},{key:3,value:400}]`转换为固定格式`[{1:10},{2:300},{3:400}]`
+
+```javascript
+var arr = [{key:1,value:10},{key:2,value:300},{key:3,value:400}]
+var result = arr.map(function(item){
+	var obj = {}
+	obj[item.key] = item.value
+	return obj
+})
+console.log(result)
+```
