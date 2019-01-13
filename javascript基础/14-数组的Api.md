@@ -143,3 +143,17 @@ var result = arr.join("&");
 console.log(result,arr);
 ```
 
+# toString
+
+该api是一个实例方法,必须要new以后才能使用，返回一个字符串，表示指定的数组及其元素。
+
+* 语法：arr.toString()
+* 参数：无
+* 返回值：返回一个字符串。 
+* 是否影响老数组：影响
+
+```javascript
+var arr =[1,2,3,4];
+var result = arr.toString();
+console.log(result,arr);
+```
