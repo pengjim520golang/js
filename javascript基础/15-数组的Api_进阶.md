@@ -147,3 +147,26 @@ console.log(result);
 * 返回值：返回排序后的数组。
 		
 * 是否影响老数组： 影响 原数组已经被排序后的数组代替。
+
+```javascript
+var arr =[1,2,6,4,3,5,7,8];
+arr.sort(function(a,b){
+	return b-a
+})
+console.log(arr)
+
+
+var data =["Tommy","Alice","Candy","Bob"];
+data.sort()
+console.log(data)
+```
+
+> 大多数情况下我们如果是从大到小我们使用reverse来代替
+
+```javascript
+var arr =[1,2,6,4,3,5,7,8];
+arr.reverse()
+console.log(arr)
+```
+
+*sort和reverse细节:它们返回的数组都是一个引用*
