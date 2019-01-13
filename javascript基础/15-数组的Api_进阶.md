@@ -133,3 +133,17 @@ var result = arr.filter(function(item,index){
 		
 console.log(result);
 ```
+
+# sort
+
+该方法使用in-place算法对数组的元素进行排序，并返回数组。
+
+* 语法规则:sort(function(a,b))
+  
+   -从小到大,a-b
+
+   -从大到小,b-a
+
+* 返回值：返回排序后的数组。
+		
+* 是否影响老数组： 影响 原数组已经被排序后的数组代替。
