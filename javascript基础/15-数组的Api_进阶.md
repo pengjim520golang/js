@@ -236,3 +236,40 @@ result = arr.slice()
 console.log(result)
 console.log(arr==result)
 ```
+
+# splice 
+
+该方法通过删除现有元素和/或添加新元素来更改一个数组的内容
+
+* 返回值:返回被删除的元素
+
+* 是否影响老数组：影响
+
+```javascript
+var arr = [1,2,3,4,5,6,7]
+//把2,3,4删除
+var res = arr.splice(1,3)
+console.log(arr,res)
+```
+
+```javascript
+var arr = [1,2,3,4,5,6,7]
+//在把3删除并且在原来3的位置开始插入a,b,c
+arr.splice(2,1,"a","b","c")
+console.log(arr)
+```
+
+
+```javascript
+var arr = [1,2,3,4,5,6,7]
+//在索引为2的位置开始插入a,b,c
+arr.splice(2,0,"a","b","c")
+console.log(arr)
+```
+
+```javascript
+var arr = [1,2,3,4,5,6,7]
+//删除整个数组中所有的元素
+arr.splice(0)
+console.log(arr)
+```
