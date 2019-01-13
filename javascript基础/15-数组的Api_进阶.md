@@ -210,3 +210,29 @@ var result = arr.map(function(item){
 })
 console.log(result)
 ```
+
+# slice
+
+该方法返回一个从开始到结束（不包括结束，左闭右开）选择的数组的一部分浅拷贝到一个新数组对象。
+
+* 语法规则:slice(begin,end):[begin,end),begin 可选
+
+* 返回值：一个含有提取元素的新数组
+		
+* 是否影响老数组：不影响
+
+> 这个方法很像golang中的切片
+
+```javascript
+var arr = [1,2,3,4,5,6,7,8]
+var result = arr.slice(1,4)
+console.log(result)
+result = arr.slice(4)
+console.log(result)
+result = arr.slice()
+console.log(result)
+//复制数组
+result = arr.slice()
+console.log(result)
+console.log(arr==result)
+```
