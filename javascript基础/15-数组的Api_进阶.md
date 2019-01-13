@@ -102,3 +102,34 @@ var result = arr.some(function(item,index){
 		
 console.log(result);
 ```
+
+# filter
+
+该方法是实例方法,方法创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。 
+
+语法:filter(callback,thisArgs)
+
+* callback形参: function(value,index,source)
+
+   -value : 数组中的值
+
+   -index : 数组中的索引
+
+   -source : 原数组
+
+* thisArgs: 可选参数。当执行回调 函数时用作this的值,如果省略this则是window
+		
+* 返回值：一个新的通过测试的元素的集合的数组
+		
+* 是否影响老数组：不影响
+
+```javascript
+var arr =[1,2,3,4,5,6,7,8];
+var result = arr.filter(function(item,index){
+    if(item<5){
+	return true;
+    }
+})
+		
+console.log(result);
+```
