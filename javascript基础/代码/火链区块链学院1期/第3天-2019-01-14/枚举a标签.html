@@ -1,0 +1,14 @@
+<a href="http://www.baidu.com" target="_blank" id="baidu">百度111</a>
+
+<hr />枚举以上的a标签属性如下:<hr />
+
+<script>
+    var aObj = document.getElementById("baidu")
+    console.log(typeof aObj)
+    console.log(aObj)
+
+    for(var key in aObj){
+        //console.log(key)
+        document.write( key + "=" + aObj[key] + "<br /><br />" )
+    }
+</script>
