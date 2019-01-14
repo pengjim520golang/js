@@ -1,0 +1,37 @@
+<script>
+
+    var a = "pengjin"
+    var b = a
+    b = "lisi"
+
+    console.log(a,b) // a==pengjin b=lisi
+
+
+
+    var obj = new Object();
+    obj.name = "zs"
+    obj.age = 33
+    obj.gender = "male"
+
+    var obj2 = obj 
+    //引用数据类型比较的时候是比较地址是否一样
+    console.log(obj2==obj,obj2===obj) 
+
+    console.log(obj.name,obj2.name) 
+
+    obj2.name = "lisi"
+
+    console.log(obj.name,obj2.name) 
+
+
+    var obj3 = new Object() 
+    obj3.name = "wangwu"
+    var obj4 = new Object()
+    obj4.name = "zhaoliu"
+    console.log(obj3==obj4,obj3===obj4) 
+
+
+    console.log(obj3.name,obj4.name) 
+
+
+</script>

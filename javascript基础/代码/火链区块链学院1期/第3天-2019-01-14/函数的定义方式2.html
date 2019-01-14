@@ -1,0 +1,23 @@
+<script>
+    function PrintMessage(){
+        console.log("xxxxx")
+        var x = 0 , y = 100
+        console.log(x+y)
+       
+    }
+    var res = PrintMessage()
+    console.log("res=",res)
+
+    //在js定义函数的时候不指定返回值，实际上就是return undefined;
+    function PrintMessage2(){
+        return undefined
+    }
+    res = PrintMessage2()
+    console.log("res=",res)
+
+    function PrintMessage3(){
+        return; //return undefined
+    }
+    res = PrintMessage3()
+    console.log("res=",res)
+</script>

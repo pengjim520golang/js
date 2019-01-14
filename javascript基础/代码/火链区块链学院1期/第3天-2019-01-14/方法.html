@@ -1,0 +1,26 @@
+<script>
+
+    function func(){
+
+    }
+
+    func(); //普通调用
+
+
+    var user = {
+        username:"pengjin",
+        age:38,
+        level:"vip",
+        //我们把对象中属性名:function(){} 的方式叫做定义对象的方法
+        getInfo:function(){
+            //console.log("getInfo username=pengjin,age:34,level:vip")
+            console.log("username="+user.username+",age="+user.age)
+        }
+    }
+
+    console.log(user)
+   
+    console.log( typeof user.getInfo  )
+
+     user.getInfo(); //方法的调用
+</script>

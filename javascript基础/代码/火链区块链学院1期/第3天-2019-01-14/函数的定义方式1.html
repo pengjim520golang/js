@@ -1,0 +1,13 @@
+<script>
+
+    /**
+    func PrintMessage(){
+        fmt.Println("xxxxx")
+    }
+    PrintMessage()
+    */
+
+    var PrintMessage = new Function("console.log('xxxxx')")
+    console.log( typeof PrintMessage )
+    PrintMessage()
+</script>

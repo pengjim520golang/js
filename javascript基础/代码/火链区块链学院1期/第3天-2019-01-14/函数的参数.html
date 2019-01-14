@@ -1,0 +1,38 @@
+<script>
+    //定义函数的时候在()中定义的变量我们叫做形式参数，简称为形参
+    function addition(x,y){
+        console.log("x+y=",x+y)
+    }
+    //调用的函数的时候传入的参数，我们称为实参,x=10,y=20
+    addition(10,20)
+    addition()  //没有传入任何的实参就调用了函数
+    addition(100) //传入的参数小于形参的个数
+    addition(100,400,600) //传入的参数大于形参的个数
+    /**
+    function addition(x,y){
+        var x,y 
+        console.log("x+y=",x+y)
+    }
+    addition(10,20)
+
+  var x,y 
+  x = 100
+  y = 400
+  console.log("x+y=",x+y) //100+undefined
+
+
+    **/
+
+
+    var func = function(x,y){
+        console.log(x-y)
+    }
+
+    func(100,50);
+
+    (function(x,y){
+        console.log(x*y)
+    })(4,8)
+
+
+</script>
