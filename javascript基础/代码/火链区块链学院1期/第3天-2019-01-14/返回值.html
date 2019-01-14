@@ -10,4 +10,56 @@
     console.log(res)  //30 
     res = Add(-1,5)
     console.log(res) //undefined
+    
+    function Person(name,age,gender){
+        return {
+            name:name,
+            age:age,
+            gender:gender
+        }
+
+    }
+    var zs = Person("zhangsan",33,"male")
+    console.log(zs)
+
+
+
+
+    function demo(){
+        return function(){
+            console.log("this is demo inner function")
+        }
+    }
+
+    var res = demo(); 
+    console.log( typeof res,res )
+    res(); //调用demo函数的返回值，而这个返回值也是一个函数
+
+
+
+    function getProvider(){
+        return function(){
+            return {
+                name:"web3",
+                api:"0.20.1",
+                provider:function(){
+                    return {
+                        name:"httpProivder",
+                        api:"Metamask"
+                    }
+                }
+            }
+        }
+    }
+
+    var web3 = getProvider();
+    console.log( typeof web3 )
+
+    var provider = web3()
+    console.log(typeof provider)
+
+
+    var metaMask = provider.provider()
+    console.log(metaMask)
+
 </script>
