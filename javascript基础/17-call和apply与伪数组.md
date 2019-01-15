@@ -37,3 +37,28 @@ function addition(x,y){
 
 addition.apply({name:"pengjin"},[30,40])
 ```
+
+> 在js中call使用的几率更高,通常用于转换伪数组为真数组
+
+# 伪数组
+
+通常属性名是数值且含有length属性的对象,我们称为伪数组,然而伪数组无法使用数组中的方法,这时我们需要把伪数组转换为真数组
+
+```javascript
+
+var obj = new Object()
+obj[0] = 100
+obj[1] = 200
+obj[2] = 300
+obj.length = 3
+
+console.log( Array.isArray(obj) ) //false
+
+var arr = Array.prototype.slice.call(obj)
+
+console.log( Array.isArray(arr) ) //true
+
+arr.map(function(item,index){
+	console.log(index,item)
+})
+```
