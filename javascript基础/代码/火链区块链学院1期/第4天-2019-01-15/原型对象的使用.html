@@ -1,0 +1,38 @@
+<script>
+
+    function User(name,age,gender){
+        this.name = name 
+        this.age = age
+        this.gender = gender
+        this.test = "that is test"
+    }
+
+    User.prototype.test = "this is test"
+    User.prototype.getInfo = function(){
+        //console.log(this)
+        console.log(this.name+","+this.age+","+this.gender)
+       
+    }
+
+    console.log( "构造函数的原型对象:", typeof User.prototype ) 
+
+
+    var zs = new User("zhangsan",33,"male")
+    var ls = new User("lisi",33,"famle")
+
+    console.log( "zs是构造函数的实例，原型对象:",typeof zs.__proto__ )
+
+    console.log("构造函数的原型对象和zs实例的原型对象一致性:",User.prototype===zs.__proto__)
+    console.log("构造函数的原型对象和ls实例的原型对象一致性:",User.prototype===ls.__proto__)
+    console.log("来自同一个构造函数的实例对象原型对象都是一致的:",zs.__proto__===ls.__proto__)
+
+    console.log("zs的test属性",zs.__proto__.test)
+    console.log("ls的test属性",ls.__proto__.test)
+
+    console.log("zs的test属性",zs.test)
+    console.log("ls的test属性",ls.test)
+
+
+    zs.getInfo()
+    ls.getInfo() 
+</script>

@@ -1,0 +1,18 @@
+<script>
+    function demo(){
+        console.log(this)
+    }
+
+    demo(); // window.demo() 
+
+
+    var obj = {
+        name:"zhangsan",
+        age:33,
+        func:demo 
+    }
+
+    console.log( obj.func === demo )
+
+    obj.func() 
+</script>

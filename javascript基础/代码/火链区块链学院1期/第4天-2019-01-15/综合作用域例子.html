@@ -1,0 +1,16 @@
+<script>
+var a  = "window.a"
+var b = "window.b"
+
+function Outer(){
+    var a = "Outer.a"
+    var Inner = function(){
+        console.log(a)
+        console.log(b)
+    }
+    Inner();
+}
+
+Outer();
+
+</script>

@@ -1,0 +1,33 @@
+<script>
+    /*
+        {
+            name:"xxxx"
+            age:33
+            gender:male
+        }
+    */
+
+    function User(_name,_age,_gender){
+        this.name = _name;  
+        this.age = _age;
+        this.gender = _gender; 
+    }
+    //构造函数其实就是一个普通的函数，它成为构造函数只跟调用形式有关，new 函数名称（）
+    var zs = new User("zs",33,"male") //构造函数调用
+    var ls = new User("ls",33,"male") //构造函数调用
+    var ww = new User("ww",33,"male") //构造函数调用
+    console.log(zs,ls,ww)
+
+
+
+    // var obj = new Object() //function  Object()
+    // obj.name  ="zs"
+    // obj.age = 33
+    // obj.gender = "male"
+
+    // console.log(zs)
+
+    // console.log(obj,obj,obj)
+
+
+</script>

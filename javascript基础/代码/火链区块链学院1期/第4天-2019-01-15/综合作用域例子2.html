@@ -1,0 +1,15 @@
+<script>
+
+
+function Outer(){
+    strName = "localhost:gz3306"  //strName在全局作用域中，还是在函数作用域中？
+}
+
+var strName = "localhost:3306" // window
+
+Outer()
+
+console.log(strName)
+
+
+</script>

@@ -1,0 +1,15 @@
+<script>
+
+    //如果一个变量在函数内有定义会查找函数中的变量定义，如果函数中没有那么就去全局中查找，如果全局中找不到就报错
+    function demo(){
+        //var strName = "sasa"
+        console.log( strName )
+        console.log( strAge )
+        //console.log( window.strName )
+    }
+
+    var strName = "pengjin"
+
+    demo();
+
+</script>

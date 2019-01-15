@@ -1,0 +1,36 @@
+<script>
+
+
+        function getUserInfo(){
+                    console.log("-------信息如下-------")
+                    console.log("姓名:",this.name )
+                    console.log("年龄:",this.age )
+                    console.log("性别:",this.gender )
+                    console.log("-------this的指向-------")
+                    console.log(this)
+        }
+
+            //姓名，年龄，性别
+        function createUser(_name,_age,_gender){
+            return {
+                name:_name,
+                age : _age,
+                gender : _gender,
+                getInfo:getUserInfo
+            }
+        }
+    
+        var zs = createUser("zs",33,"male");
+        var ls = createUser("ls",43,"male");
+        var ww = createUser("ww",53,"male");
+    
+        //console.log(zs,ls,ww)
+
+        zs.getInfo() 
+        ls.getInfo()
+
+
+
+
+
+</script>
