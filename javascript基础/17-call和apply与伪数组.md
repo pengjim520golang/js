@@ -62,3 +62,30 @@ arr.map(function(item,index){
 	console.log(index,item)
 })
 ```
+
+# arguments
+
+函数中的形参都存放在arguments对象中,而arguments拥有length属性是一个经典的伪数组
+
+```javascript
+function demo(){
+	console.log( typeof arguments )
+	console.log( arguments.length )
+	console.log(arguments[0])
+	console.log(arguments[1])
+	console.log(arguments[2])
+}
+
+demo(100,200,300)
+```
+
+```javascript
+function demo(){
+	var arr = Array.prototype.slice.call(arguments)
+	arr.map(function(item,index){
+		console.log(index,item)
+	})
+}
+
+demo(100,200,300)
+```
