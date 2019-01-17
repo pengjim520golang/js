@@ -1,44 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <div id="wrap">
-        <div id="inner">
-            <div class="app">app-1</div>
-            <div class="app">app-2</div>
-            <div class="app">app-3</div>
-            <div class="app">app-4</div>
-            <div class="app">app-5</div>
-            <div class="app">app-6</div></div>
-    </div>
-</body>
+<script src="zhangsan.js"></script>
+<script src="pengjin.js"></script>
 
-<script type="text/javascript">
-    window.onload = function(){
-        // //var elWrap = document.getElementsByClassName("app")
-        // var elWrap = document.querySelector("#wrap")
-        // //var divChild = elWrap.firstElementChild
-        // var divChild = elWrap.getElementsByClassName("app")
-        // console.log(elWrap,divChild)
-        // var arr = Array.apply(null,divChild)
-        // console.log(arr)
-        // arr.map( function(item,index){
-        //     console.log(item)
-        // } )
+<script>
 
-        // var divApp = document.querySelectorAll("#wrap > #inner .app")
-        // console.log(divApp)
-
-        //var inner = document.querySelector("#wrap > #inner")
-        var wrap = document.querySelector("#wrap > #inner")
-        console.log( "~" , wrap.lastChild )
-    }
+//希望调用了pengjin的show函数
+var mc = new MyClass();
+mc.show(); 
+demo();
 </script>
-
-</html>
-

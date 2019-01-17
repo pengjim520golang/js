@@ -1,0 +1,23 @@
+<script>
+function Person(){
+    this.roleName="vip"
+}
+Person.prototype.roleName = "normal"
+
+
+
+
+var obj = new Person();
+//console.log( obj.hasOwnProperty("roleName") )
+//console.log(obj.roleName)
+//console.log(obj.__proto__.name)
+// in操作符，先找本身，如果本身找不到，找原型，原型也找不到返回false
+//console.log("roleName" in obj)  // true 
+
+if( obj.hasOwnProperty("roleName") ){
+    console.log(obj.roleName)
+}else{
+    console.log(obj.__proto__.roleName)
+}
+
+</script>
