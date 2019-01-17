@@ -1,0 +1,17 @@
+<script>
+    var gender = ["男","女","保密"];
+    console.log(gender,gender.length)
+
+
+    //动态为一个已经初始化的数组增加元素到末尾我可以使用 数组名[数组名.length] = value 
+    gender[gender.length] = "male"
+    gender[gender.length] = "fmale"
+    gender[gender.length] = "先生"
+    gender[gender.length] = "女士"
+    console.log(gender,gender.length)
+
+    //如果我们希望每次都获取最新添加的那个元素 数组名[数组名.length - 1]
+    
+    console.log(  gender[gender.length-1] )
+
+</script>

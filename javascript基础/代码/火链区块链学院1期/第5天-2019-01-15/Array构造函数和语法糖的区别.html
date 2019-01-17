@@ -1,0 +1,28 @@
+<script>
+    //声明数组的同时为数组指定长度
+    var data = new Array(4);
+    data[0] = "春"
+    data[1] = "夏"
+    data[2] = "秋"
+    data[3] = "东"
+    console.log(data)
+
+    var data2 = new Array(4);
+    data2[0] = "男"
+    data2[1] = "女"
+    console.log(data2,data2[2],data2[3])
+
+    //Array构造函数如果它的参数只有1个参数，并且参数的类型是number，那么就是初始化数组的长度
+    //如果大于1个number类型参数个数或者参数的类型不为number那么就是数组初始化数据值
+    var myData = new Array(10)
+    myData = new Array(10,100,200) //[10,100,200]
+    myData = new Array("pengjin")
+    console.log(myData.length,myData[0],myData[1],myData[2])
+
+    //语法糖[]一定永远都是初始化值
+    var myData2 = [10]
+    console.log(myData2.length,myData2[0],myData2[1],myData2[2])
+
+
+
+</script>

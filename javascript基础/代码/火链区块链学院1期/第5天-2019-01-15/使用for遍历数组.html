@@ -1,0 +1,13 @@
+<script>
+    //使用length进行遍历
+    var arr = ["pengjin",123,"sasa","zhangsan",{name:"pengjin"}]
+    for(var index=0;index<arr.length;index++){
+        console.log( index,"=",arr[index],typeof index)
+    }
+
+    //for...in 获取所有对象的属性
+    for( var key in arr ){
+        console.log( key + "=" + arr[key],typeof key )
+    }
+</script>
+
