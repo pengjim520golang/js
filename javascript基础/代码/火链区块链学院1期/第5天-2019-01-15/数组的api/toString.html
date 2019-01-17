@@ -1,0 +1,28 @@
+<script>
+
+
+    var obj = {
+        name:"pengjin"
+    }
+    obj.toString = function(){
+        return "[Object name=pengjin]"
+    }
+    function dog(){
+        this.name = "peter"
+        this.age = 3
+    }
+
+    var d = new dog()
+
+    d.toString = function(){
+        return "[Dog name=perter]" //默认[object Object]
+    }
+
+    alert( obj ) //[Object name=pengjin]
+    alert(d) //[Dog name=perter] 
+
+
+    var arr = ["pengjin","sasa","zhangsan"]
+    console.log( arr.toString() )
+
+</script>

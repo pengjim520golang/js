@@ -1,0 +1,23 @@
+<script>
+
+    function tvShow(){
+        return "电视显示"
+    }
+
+    function ledShow(){
+        return "led显示"
+    }
+
+    function xxShow(){
+        return "xxShow"
+    }
+
+
+    function show(func){
+        return func();
+    }
+
+    var res = show(ledShow);
+    console.log(res) 
+
+</script>

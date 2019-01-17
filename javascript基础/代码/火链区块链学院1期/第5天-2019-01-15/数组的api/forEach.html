@@ -1,0 +1,19 @@
+<script>
+
+    var arr = ["pengjin","sasa",111,[100,200,300]]
+    
+    arr.forEach(function(value,index){
+        //console.log(this)
+        //console.log(value,index)
+        if( Array.isArray(value) ){
+            value.forEach(function(item,key){
+                console.log("index=",index,"key=",key,",item=",item)
+            })
+        }else{
+            console.log("index=",index,"value=",value)
+        }
+    })
+
+
+
+</script>
