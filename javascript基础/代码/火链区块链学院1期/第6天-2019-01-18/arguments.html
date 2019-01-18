@@ -1,0 +1,18 @@
+<script>
+    function demo(){
+        // console.log(arguments.length)
+        // console.log(arguments[1])
+        // console.log(arguments[3])
+        // console.log(Array.isArray(arguments))
+        var arr = Array.prototype.slice.call(arguments) //把伪数组转换为真数组
+        //var arr = Array.prototype.slice.apply(arguments)
+        console.log(Array.isArray(arr))
+        arr.map(function(item,index){
+            console.log(item)
+        })
+    }
+
+    //demo() //传来了0个参数,arguments.length==0
+    demo(11,22,33,44)//传来了4个参数,arguments.length==4
+
+</script>

@@ -1,0 +1,29 @@
+<script>
+    var arr = [4,6,8]
+
+    var res = arr.map(function(value,index){
+        return value ** 2
+    })
+
+    console.log(res,arr)
+
+    // 固定格式: [{1:"pengjin"},{2:3000},{3:50000}]
+    // 新生代(json):[{key:1,value:pengjin},{key:2,value:3000},{key:3,value:50000}]
+
+
+    var nowFmt = [{key:1,value:"pengjin"},{key:2,value:3000},{key:3,value:50000}]
+    /*
+    var result = [] 
+    nowFmt.forEach(function(item,index){
+        var obj = new Object() 
+        obj[item.key] = item.value
+        result.push(obj)
+    })*/
+
+    var result = nowFmt.map(function(item,value){
+        var obj = new Object() 
+        obj[item.key] = item.value
+        return obj        
+    })
+    console.log( result )
+</script>

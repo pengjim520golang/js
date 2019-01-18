@@ -1,0 +1,12 @@
+<script>
+    var arr = [1,2,3,4,4,5,1,1,2,2,3,6,7,8,9,9]
+
+    var result = [] 
+    arr.sort().map(function(item,index){
+        if(index===0 || result[result.length-1] !== item ){
+            result.push(item)
+        }
+    })
+
+    console.log(result)
+</script>

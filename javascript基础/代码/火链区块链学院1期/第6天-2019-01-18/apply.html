@@ -1,0 +1,21 @@
+<script>
+        var obj = {name:"pengjin",age:33}
+    
+        function demo(){
+            console.log(this) 
+            console.log("this is demo")
+        }
+        //普通调用,方法调用,构造函数调用,call和apply调用(为了手动修改this而生)
+    
+        demo.apply(obj) 
+    
+    
+        function addition(x,y){
+            console.log(this) 
+            console.log(x+y)
+        }
+    
+        addition.apply(obj,[1,2]) 
+    
+    
+    </script>

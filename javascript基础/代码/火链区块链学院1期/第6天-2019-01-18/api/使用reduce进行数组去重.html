@@ -1,0 +1,16 @@
+<script>
+    //var arr = [1,2,3,4,4,5,1,1,2,2,3,6,7,8,9,9]
+    var arr = ["彭劲","张三","张三","张三","张三","a","b","张三","彭劲"]
+
+    arr = ["彭劲",123,"123"]
+
+    var result = arr.sort().reduce(function(res,value,index){
+        if( index===0 || res[res.length-1] !== value  ){
+            res.push(value)
+           
+        }
+        return res 
+    },[])
+
+    console.log(result)
+</script>

@@ -1,0 +1,33 @@
+<script>
+
+    var arr = [99,33,11,1,2,4,78,98]
+
+    arr.sort(function(a,b){
+        //return a - b  //从小到大
+        return b - a //从大到小
+    })
+
+    console.log(arr)
+
+    
+    var  arr2 = ["a","c","b","d"]
+
+    arr2.sort() //简写相当于a-b的unicode的码点进行排序
+    console.log(arr2)
+
+
+    var  arr3 = ["a","c","b","d","w","e"]
+
+    arr3.reverse() //简写相当于b-a的unicode的码点进行排序
+    console.log(arr3)
+
+    //使用sort配合reduce进行归类去重
+    var arrData = [1,23423,33,1,3234,33,33,1,33,1,13,11,23423,11,23423,11,23423]
+
+    arrData.sort() 
+    console.log(arrData)
+
+
+
+
+</script>
