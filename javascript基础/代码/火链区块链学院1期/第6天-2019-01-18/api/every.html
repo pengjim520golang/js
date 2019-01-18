@@ -1,0 +1,44 @@
+<script>
+    var arr = [123,"pengjin",45,88,89]
+    arr = [123,NaN,45,88,89]
+    //验证当前数组的元素是不是都是number类型
+    var bool = arr.every(function(value,index){
+        if(typeof value==='number' && !isNaN(value) ){
+            return true 
+        }
+    })
+
+    //console.log(bool) 
+
+    //var css = "123px"
+    //css = "px1234"
+    //console.log( parseInt(css),typeof parseInt(css) )
+
+
+    //验证一个数组中的元素是否都是对象.typeof对象--> object
+    function Person(){
+        this.name = "pengjin"
+    }
+
+    var obj = null;
+    //console.log( typeof Person ) 
+    var objSet = [{name:"pengjin"},{xxx:"xxxx"},Person] 
+    bool = objSet.every(function(value,index){
+        //因为null返回object，所以需要把null进行判断
+        if(value!==null && (typeof value==='object' || typeof value==="function") ){
+            if(typeof value==="function"){
+                obj = new Person()
+            }
+            return true 
+        }
+        
+    })
+    ///console.log(bool) 
+
+    if(bool){
+        console.log( obj.xxx ) 
+    }
+
+
+
+</script>

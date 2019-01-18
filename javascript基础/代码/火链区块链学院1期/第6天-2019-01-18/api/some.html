@@ -1,0 +1,35 @@
+<script>
+    //获取到的数据包，只要含有number类型,就代表当前获取的数据包是有效数据
+    var data = ["123423","pengjin",{},[],123,"xxx","234234234"] //true 
+    data = ["123423","pengjin",{},[],NaN,"xxx","234234234"] //true 
+    var bool = data.some(function(value,index){
+        if(typeof value ==="number" && !isNaN(value)){
+            return true 
+        }
+    })
+    console.log(bool)
+
+    var amount = [120,234234,-1,0,13.3,23423]
+
+    bool = data.some(function(value,index){
+        if(typeof value ==="number" && !isNaN(value) && value>0){
+            return true 
+        }
+    })
+    console.log(bool)
+
+
+    //过滤无效的价格，保存有效的竞标价格
+    var amount = [120,234234,-1,0,13.3,23423]
+    var res = [] 
+    amount.some(function(value,index){
+        if(typeof value ==="number" && !isNaN(value) && value>0){
+            res.push(value)
+        }
+    })
+    console.log(res)
+
+
+
+
+</script>

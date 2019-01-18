@@ -1,0 +1,11 @@
+<script>
+        //过滤无效的价格，保存有效的竞标价格
+    var amount = [120,234234,-1,0,13.3,23423]
+    var res = amount.filter(function(value,index){
+        if(typeof value ==="number" && !isNaN(value) && value>0){
+            return true 
+        }
+    })
+    console.log(res)
+
+</script>
