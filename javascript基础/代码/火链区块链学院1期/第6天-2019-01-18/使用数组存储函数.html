@@ -1,0 +1,24 @@
+<script>
+    //这个库的名字叫web3.js --> geth
+    function demo(){
+        console.log("demo func")
+    }
+
+    function show(){
+        console.log("show func")
+    }
+
+    function ajax(){
+        console.log("show func")
+    }
+
+    // geth --datadir . --rpc --rpcapi web3 demo show ajax
+    var geth = [demo,show,ajax]
+
+    geth[0]() 
+    geth[1]() 
+
+
+    // go build -o geth main.go 
+    // ./geth  --rpcapi web3 demo show ajax
+</script>

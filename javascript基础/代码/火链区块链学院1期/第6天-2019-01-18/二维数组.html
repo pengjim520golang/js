@@ -1,0 +1,47 @@
+<script>
+    // var arr = [ ["sasa","pengjin"],[100,200,300,400],[{name:"pengjin",age:"33"},{name:"sasa",age:"43"}]  ]
+    // console.log( arr[0][0] ) //sasa 
+    // console.log( arr[2][1].age,arr[2][1]["age"] ) //43,43
+
+    //ajax -->  json --> 城市联动菜单
+    var city = []
+    city[0] = "全部城市"
+    city[1] = "深圳市"
+    city[2] = "北京市"
+
+
+    var area = []
+    area[0] = ["全部区域"]
+    area[1] = ["深圳所有区域","宝安区","罗湖区"]
+
+
+    area[2] = ["北京市所有区域","东城区","昌平区"]
+
+
+
+
+    var searchCityKey = -1
+    var inputCity = "北京市"
+  
+    city.forEach(function(value,index){
+        if(inputCity===value){
+            searchCityKey=index
+        }
+    })
+
+    if(searchCityKey!==-1){
+       var allArea = area[searchCityKey]
+       //console.log(allArea)
+       console.log("-----" + inputCity + "的所有区域如下-----")
+       allArea.forEach(function(value,index){
+           if(index!==0){
+               console.log(value)
+           }
+       })
+    }else{
+        console.log("无法找到对应的城市")
+    }
+  
+
+
+</script>
