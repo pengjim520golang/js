@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        p{
+            border:1px solid #000;
+            color: #fff;
+            width: 100px;
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="message"></div>
+
+    
+</body>
+
+<script>
+    window.onload = function(){
+        var msg = document.querySelector("#message")
+        //innerHTML和innerText都会使得浏览器产生重新渲染的结果，下一次的结果会覆盖上一次的结果
+        msg.innerHTML = "<p>你好</p>"
+        msg.innerHTML += "<p>世界</p>"
+        //innerText与innerHTML不同的是不支持css和标签，一般使用innerHTML的几率比较高
+        msg.innerText += "<p>xxxxx</p>"
+    }
+</script>
+
+
+
+</html>

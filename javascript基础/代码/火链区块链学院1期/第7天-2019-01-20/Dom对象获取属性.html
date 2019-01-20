@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .test{
+            font-size: 33px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" firelinks="火链学院" bitcoin="比特币" class="test">div-1</div>
+    <a href="##" id="baidu" bitcoin="a的比特币">百度</a>
+</body>
+
+<script>
+    window.onload = function(){
+        var divOne = document.querySelector("#div1")
+        //使用getAttribute获取属性的值
+        var idString = divOne.getAttribute("id")
+        console.log(idString)
+
+
+        //使用简写方式获取bitcoin和firelinks
+        var btc  = divOne.getAttribute( "bitcoin")  
+        console.log(btc)
+
+        var fl  = divOne.getAttribute("firelinks")
+        console.log(fl)
+
+
+        //也可以使用简写的方式
+        var idStr = divOne.id 
+        console.log(idStr)
+
+        //使用简写方式获取bitcoin和firelinks
+        var btc  = divOne.bitcoin 
+        console.log(btc)
+
+        var fl  = divOne.firelinks
+        console.log(fl)
+
+
+
+        //获取属性有一个特殊的地方就是针对class而言要是使用className
+        var classN = divOne.className; 
+        console.log(classN)
+
+
+        //判断一个属性是否存在
+        var bool = divOne.hasAttribute("bitcoin")
+        console.log(bool)
+        
+    
+
+
+        //属性在元素中有两种：叫做本地属性localName,另一种叫自定义属性
+        //对于a标签而言 target属于本地属性，而bitcoin属于自定义属性
+        //hasAttribute有兼容性问题,有些浏览器会自定判断本地属性是否存在就算没有在元素中出现也返回true，v8是没有出现则返回false
+        var aObj = document.querySelector("#baidu")
+        bool = aObj.hasAttribute("bitcoin")
+        console.log(bool)//true
+        bool = aObj.hasAttribute("eth")
+        console.log(bool)//false
+        bool = aObj.hasAttribute("target")  
+        console.log(bool)//兼容性问题,v8返回 false,其他浏览器有可以返回true,解决问题最好使用jquery
+
+    }
+</script>
+</html>

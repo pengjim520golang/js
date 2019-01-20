@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id="parent">
+                <div class="subNode">sub-1</div>
+                <div class="subNode" id="sub-2">sub-2</div>
+                <div class="subNode" id="sub-3333">sub-333</div>
+                <div class="subNode" id="sub-444">sub-444</div>
+                <div class="subNode">sub-5</div>
+        </div>
+
+    
+</body>
+
+<script>
+    window.onload=function(){
+        var sub2Div = document.querySelector("#sub-2")
+        console.log( sub2Div.parentNode )
+        console.log( sub2Div.parentElement )
+
+    }
+</script>
+
+
+</html>

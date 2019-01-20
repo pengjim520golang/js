@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Page Title</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    window.onload = function(){
+        var htmlObj = document.documentElement
+        console.log(htmlObj)
+
+        //开发时尽量不要使用all，否则会有意向不到的bug产生
+        var all = document.all
+        var html = all[0]
+        console.log(all.length) 
+        console.log(html)
+
+        console.log(typeof all)  //all其实是js当中开发的时候一个bug，当all调用了属性或者方法时，undefined会自动转换
+        console.log(all)  //返回对象，因为console.log会调用对象的toString方法
+
+    }
+</script>
+</html>

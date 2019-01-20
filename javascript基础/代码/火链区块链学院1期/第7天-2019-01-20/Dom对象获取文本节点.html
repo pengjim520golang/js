@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="articles">xxxxxxx<strong>HHHHHHHHH</strong>xxxxxxxxxxx<h3>xxxx</h3></p>
+</body>
+
+
+<script>
+    window.onload = function(){
+        var pObj = document.querySelector("#articles")
+        //innerHTML支持html标签,innerText不支持html标签
+        console.log( "innerHTML" +  pObj.innerHTML )
+        console.log( "innerText:" + pObj.innerText )
+    }
+</script>
+
+</html>
