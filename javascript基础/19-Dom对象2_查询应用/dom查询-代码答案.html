@@ -4,24 +4,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Untitled Document</title>
 		<link rel="stylesheet" type="text/css" href="style/css.css" />
-		<script type="text/javascript">
-		
-			window.onload = function(){
-				//查找#bj节点
-				//查找所有li节点
-				//查找name=gender的所有节点
-				//查找#city下所有li节点
-				//返回#city的所有子节点
-				//返回#phone的第一个子节点
-				//返回#bj的父节点
-				//返回#android的前一个兄弟节点
-				//读取#username的value属性值
-				//设置#username的value属性值
-				//返回#bj的文本值
-				
-			};
-			
-		</script>
+
 	</head>
 	<body>
 		<div id="total">
@@ -58,7 +41,8 @@
 					你手机的操作系统是?
 				</p>
 
-				<ul id="phone"><li>IOS</li><li id="android">Android</li><li>Windows Phone</li></ul>
+				<ul id="phone">   
+					<li>IOS</li><li id="android">Android</li><li>Windows Phone</li></ul>
 			</div>
 
 			<div class="inner">
@@ -87,4 +71,116 @@
 			<div><button id="btn11">返回#bj的文本值</button></div>
 		</div>
 	</body>
+	<!-- 引入封装好的点击事件函数 -->
+	<script type="text/javascript" src="clickEvent.js"></script>
+	<script>
+		//编写dom加载事件
+		window.onload = function(){
+				//查找#bj节点
+				clickEvent("btn01",function(){
+					var bjNode = document.getElementById("bj");
+					console.log(bjNode)
+				});
+				//查找所有li节点
+				clickEvent("btn02",function(){
+					//获取li所有节点返回的是伪数组对象
+					var li = document.getElementsByTagName("li")
+					//把伪数组转为真数组
+					var arr = Array.prototype.slice.apply(li)
+					//遍历所有的li
+					arr.map(function(item){
+						console.log(item)
+					})
+				})
+				//查找name=gender的所有节点
+				clickEvent("btn03",function(){
+					var genders = document.getElementsByName("gender")
+					//把伪数组转为真数组
+					var arr = Array.prototype.slice.call(genders)
+					arr.forEach(function(item){
+						//console.log(item.value)
+						if(item.value==="male"){
+							console.log("先生")
+						}else{
+							console.log("女士")
+						}
+					})
+				})
+				//查找#city下所有li节点
+				clickEvent("btn04",function(){
+					var cityEl =  document.querySelector("#city")
+					var cityChildren = cityEl.children
+					//不转为真数组进行遍历，使用length
+					for(var i=0;i<cityChildren.length;i++){
+						//console.log( cityChildren[i].innerText )
+						//console.log( cityChildren[i].innerHTML ) //用得最多
+						console.log( cityChildren[i].textContent )
+					}
+				})
+				//返回#city的所有子节点
+				//查找#city下所有li节点
+				clickEvent("btn05",function(){
+					var cityEl =  document.querySelector("#city")
+					var cityChildren = cityEl.childNodes
+					//不转为真数组进行遍历，使用length
+					for(var i=0;i<cityChildren.length;i++){
+						//console.log( cityChildren[i].innerText )
+						//console.log( cityChildren[i].innerHTML ) //用得最多
+						console.log( cityChildren[i].textContent )
+					}
+				})
+				//返回#phone的第一个子节点
+				clickEvent("btn06",function(){
+					var phone =  document.querySelector("#phone")
+					var firstNode = phone.firstChild //获取文本节点作为第1个子节点
+					firstNode = phone.firstElementChild //获取元素节点作为第1个子节点
+					console.log(firstNode)
+				})				
+				//返回#bj的父节点和祖先元素
+				clickEvent("btn07",function(){
+					var bjObj =  document.querySelector("#bj")
+					//获取父亲节点
+					var city = bjObj.parentNode 
+					console.log(city) 
+
+					//获取祖先节点
+					var inner = bjObj.parentNode.parentElement 
+					console.log(inner) 
+		
+				})				
+				//返回#android的前一个兄弟节点
+				clickEvent("btn08",function(){
+					var and =  document.querySelector("#android")
+					//获取父亲节点
+					var ios = and.previousElementSibling
+					console.log(ios.innerHTML)
+
+		
+				})	
+
+
+				//读取#username的value属性值
+				clickEvent("btn09",function(){
+					var txtUserName = document.getElementById("username")
+					alert( txtUserName.value )
+				})	
+
+				//设置#username的value属性值
+				//读取#username的value属性值
+				clickEvent("btn10",function(){
+					var txtUserName = document.getElementById("username")
+					var date = new Date() //获取日期
+					
+					var month = date.getMonth()+1 > 9 ? date.getMonth() : "0" + (date.getMonth()+1)
+					txtUserName.value = date.getFullYear() + "-" + month 
+				})	
+
+				//返回#bj的文本值
+								//查找#bj节点
+				clickEvent("btn11",function(){
+					var bjNode = document.getElementById("bj");
+					console.log(bjNode.innerText)
+				});		
+		}
+	</script>
 </html>
