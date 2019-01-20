@@ -1,0 +1,21 @@
+<script>
+
+    var obj = new Object()
+    obj[0] = 100
+    obj[1] = 200
+    obj[2] = 300
+    //把伪数组转为真数组
+    obj.demo = function(){
+        console.log("object demo")
+    }
+    obj.length = 3
+    var arr = Array.prototype.slice.call(obj)
+
+    arr.map(function(item,index){
+        console.log("xxxx")
+        console.log("index=",index,"value=",item)
+    })
+
+    obj.demo();
+
+</script>

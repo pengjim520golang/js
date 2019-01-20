@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="parent">
+        <div class="subNode">sub-1</div>
+        <div class="subNode">sub-2</div>
+        <div class="subNode">sub-3</div>
+    </div>
+    
+</body>
+
+<script>
+    window.onload=function(){
+        //先获取指定的父元素
+        var parentNode = document.querySelector("#parent")
+        //使用父元素获取子元素,childNodes会获取文本节点,此api基本不会使用
+        var chidrenNode = parentNode.childNodes
+        //查看长度使用length属性
+        console.log(chidrenNode.length)
+
+
+        //获取子元素节点使用children来获取,此api使用最多
+        var childrenNodes = parentNode.children
+        console.log(childrenNodes.length)
+
+        var childNodesCount = parentNode.childElementCount   //查看有多少个子元素节点
+        console.log(childNodesCount)
+
+        console.log("----childNodes获取的元素如下----")
+        console.log(chidrenNode)
+
+        console.log("----childred获取的元素如下----")
+        console.log(childrenNodes)
+
+    }
+</script>
+
+
+</html>

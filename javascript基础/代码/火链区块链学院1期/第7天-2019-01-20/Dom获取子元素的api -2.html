@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="parent">
+        <div class="subNode">sub-1</div>
+        <div class="subNode" id="sub-2">sub-2</div>
+        <div class="subNode" id="sub-3333">sub-333</div>
+        <div class="subNode" id="sub-444">sub-444</div>
+        <div class="subNode">sub-5</div>
+    </div>
+    
+</body>
+
+<script>
+    window.onload=function(){
+        //先获取指定的父元素
+        var parentNode = document.querySelector("#parent")
+        
+        //通过父元素获取第1个子元素,此api基本没用
+        var firstNode = parentNode.firstChild
+        console.log(firstNode)
+
+        //通过父元素获取第1个子元素,此api使用最多
+        var firstNodeEl = parentNode.firstElementChild
+        console.log(firstNodeEl)
+
+
+
+        //通过父元素获取最后一个子元素,此api基本没用
+        var lastNode = parentNode.lastChild
+        console.log(lastNode)
+
+        //通过父元素获取最后一个子元素,此api使用最多
+        var lastNodeEl = parentNode.lastElementChild
+        console.log(lastNodeEl)
+
+        //如果要获取特殊指定的位置，只能通过selector获取或者是id获取
+        //<div class="subNode" id="sub-2">sub-2</div>
+
+        var sec = document.getElementById("sub-2")
+        console.log(sec)
+
+
+    }
+</script>
+
+
+</html>

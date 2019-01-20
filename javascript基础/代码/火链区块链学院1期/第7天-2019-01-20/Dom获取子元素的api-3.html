@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="parent">
+        <div class="subNode">sub-1</div>
+        <div class="subNode" id="sub-2">sub-2</div>
+        <div class="subNode" id="sub-3333">sub-333</div>
+        <div class="subNode" id="sub-444">sub-444</div>
+        <div class="subNode">sub-5</div>
+    </div>
+    
+</body>
+
+<script>
+    window.onload=function(){
+        //先获取指定的父元素
+        var parentNode = document.querySelector("#parent")
+        //获取指定的第一个子元素
+        var firstNode = parentNode.firstElementChild
+
+        //获取下一个兄弟节点,此api没用
+        var nextBro = firstNode.nextSibling
+        console.log(nextBro)
+
+        //获取下一个兄弟子元素,此api使用最多
+        nextBro = firstNode.nextElementSibling
+        //nextBro = firstNode.nextElementSibling.nextElementSibling
+        console.log(nextBro)
+
+
+        var lastNode = parentNode.lastElementChild
+        //获取上一个兄弟节点,此api没用
+        var prevBro = firstNode.previousSibling
+        console.log(prevBro)
+
+        //获取上一个兄弟子元素,此api使用最多
+        prevBro = lastNode.previousElementSibling
+        //nextBro = firstNode.nextElementSibling.nextElementSibling
+        console.log( prevBro )
+
+
+    }
+</script>
+
+
+</html>

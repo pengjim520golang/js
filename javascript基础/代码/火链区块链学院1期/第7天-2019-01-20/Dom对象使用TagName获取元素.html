@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrap">
+        <div class="inner">inner-1</div>
+        <div class="inner borderStyle">inner-2</div>
+        <div class="inner">inner-3</div>
+        <div class="inner">inner-4</div>
+        <div class="inner" name="inner6">inner-5</div>
+        <div class="inner6" id="inner6" name="inner6">inner-6</div>
+    </div>
+
+    <p>这是p标签1</p>
+    <p>这是p标签2</p>
+    <p>这是p标签3</p>
+    <p>这是p标签4</p>
+    <p>这是p标签5</p>
+
+
+    <input type="button" value="button">
+    <input type="text" >
+
+</body>
+
+<script>
+    window.onload=function(){
+        var p = document.getElementsByTagName("p")
+        console.log(p)
+
+        var input = document.getElementsByTagName("input")
+        console.log(input)
+    }
+</script>
+
+</html>

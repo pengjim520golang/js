@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrap">
+        <div class="inner">inner-1</div>
+        <div class="inner">inner-2</div>
+        <div class="inner">inner-3</div>
+        <div class="inner">inner-4</div>
+        <div class="inner">inner-5</div>
+    </div>
+</body>
+
+<script>
+    window.onload=function(){
+        //selectorAll获取指定的一个元素
+        var wrapObj = document.querySelector("#wrap") 
+        console.log(wrapObj)
+        //selectorAll获取指定的所有元素
+        var inners = document.querySelectorAll("#wrap > .inner")
+        console.log(inners,",是否为数组:",Array.isArray(inners))
+        //Nodelist是一个伪数组，我们需要使用apply进行转换
+        var arr = Array.prototype.slice.apply(inners)
+        console.log(arr,",是否为数组:",Array.isArray(arr))
+        
+        //可以调用map方法进行遍历
+        arr.map(function(item,index){
+            console.log(item)
+        })
+
+
+    }
+</script>
+
+</html>

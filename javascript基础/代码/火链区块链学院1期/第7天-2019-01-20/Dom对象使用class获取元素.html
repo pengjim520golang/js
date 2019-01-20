@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrap">
+        <div class="inner">inner-1</div>
+        <div class="inner borderStyle">inner-2</div>
+        <div class="inner">inner-3</div>
+        <div class="inner">inner-4</div>
+        <div class="inner" name="inner6">inner-5</div>
+        <div class="inner6" id="inner6" name="inner6">inner-6</div>
+    </div>
+</body>
+
+<script>
+    window.onload=function(){
+        //获取所有class="inner"的元素
+        var divList = document.getElementsByClassName("inner")
+        console.log(divList,"是否为数组",Array.isArray(divList))
+       
+        var arr = Array.prototype.slice.apply(divList)
+        console.log(arr,",是否为数组:",Array.isArray(arr))
+        
+        //可以调用map方法进行遍历
+        arr.map(function(item,index){
+            console.log(item)
+        })
+
+        var div6 = document.getElementsByClassName("inner6")[0]
+        console.log(div6)
+
+        div6 = document.querySelector("#wrap > .inner6")
+        console.log(div6)
+
+        div6 = document.getElementsByName("inner6")
+        console.log(div6)
+
+         var div2 = document.getElementsByClassName("inner borderStyle")[0]
+        console.log(div2)
+    }
+</script>
+
+</html>
