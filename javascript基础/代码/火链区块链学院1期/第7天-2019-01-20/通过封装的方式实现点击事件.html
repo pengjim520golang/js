@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">弹出hello</button>
+    <button id="btn2">弹出demo</button>
+
+</body>
+
+<script>
+    function clickEvent(btnElement,btnEvent){
+        //动态创建一个按钮属性
+        var btn = document.querySelector("#" + btnElement)
+        //实现事件的onclick
+        btn.onclick = btnEvent
+    }
+
+    window.onload = function(){
+        function btn1Event(){
+            alert("hello")
+        }
+
+        function btn2Event(){
+            alert("demo")
+        }
+
+        clickEvent("btn1",btn1Event)
+        clickEvent("btn2",btn2Event)
+    }
+</script>
+</html>

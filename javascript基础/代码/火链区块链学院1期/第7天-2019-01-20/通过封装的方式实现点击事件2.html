@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">弹出hello</button>
+    <button id="btn2">弹出demo</button>
+    <button id="btn3">弹出100+200的结果</button>
+    <button id="btn4">弹出500-100的结果</button>
+    <button id="btn5">复杂需求</button>
+</body>
+
+<script>
+    function clickEvent(btnElement,btnEvent){
+        //动态创建一个按钮属性
+        var btn = document.querySelector("#" + btnElement)
+        var msg = arguments[2]
+        if(btnEvent === null || btnEvent === undefined){
+            btnEvent = function(){
+                
+                if(typeof msg==="string" || typeof msg==="number"){
+                    alert(msg) //调用第3个参数进行弹出
+                }else{
+                    alert("第3个参数必须是string或者number类型")
+                }
+                
+            } 
+        }
+        //实现事件的onclick
+        btn.onclick = btnEvent
+    }
+
+    function demo(){
+        alert("this is demo")
+        alert("this is show")
+        alert("this is show1")
+        alert("this is show2")
+    }
+
+    window.onload = function(){
+
+        clickEvent("btn1",null,"this is hello")
+        clickEvent("btn2",undefined,"this is demo")
+        clickEvent("btn3",undefined,100+200)
+        clickEvent("btn4",undefined,500-100)
+        clickEvent("btn5",demo)
+    }
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn01">点击弹出hello</button>
+    <button id="btn02">点击弹出demo</button>
+    <button id="btn03">点击弹出firelinks</button>
+</body>
+
+<script>
+    window.onload = function(){
+        var btn1 = document.getElementById("btn01")
+        btn1.onclick = function(){
+            alert("hello")
+        }
+
+        var btn2 = document.getElementById("btn02")
+        btn2.onclick = function(){
+            alert("demo")
+        }
+
+        var btn3 = document.getElementById("btn03")
+        btn3.onclick = function(){
+            alert("firelinks")
+        }
+    }
+</script>
+</html>
