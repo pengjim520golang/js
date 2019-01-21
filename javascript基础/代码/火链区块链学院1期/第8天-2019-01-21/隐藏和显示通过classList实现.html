@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box1,#box2{
+           border: 1px solid #000;
+           background: green;
+           width: 200px;
+           height: 200px;
+           margin: 10px;
+        }
+        #box1{
+            
+            background:palevioletred;
+        }
+        .show{
+            display: inline-block;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1" class="show">你好</div>
+    <div id="box2" class="show">你好</div>
+
+    <button id="btnHide">隐藏box1</button>
+    <button id="btnShow">显示box1</button>
+</body>
+<script type="text/javascript" src="clickEvent.js"></script>
+<script>
+    window.onload = function(){
+        clickEvent("btnHide",function(){
+            var box1Obj = document.querySelector("#box1")
+            //classList获取的是class属性中的所有值，add方法是追加class属性值都末尾
+            box1Obj.classList.add("hide")
+        })
+
+        clickEvent("btnShow",function(){
+            var box1Obj = document.querySelector("#box1")
+            //classList获取的是class属性中的所有值,remove方法是删除指定的class值
+            box1Obj.classList.remove("hide")
+        })       
+    }
+</script>
+</html>

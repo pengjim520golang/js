@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        .box{
+            border: 1px solid #ccc;
+            
+            text-align: center;
+            width: 400px;
+            height: 200px;
+            padding: 50px;
+        }
+    
+    </style>
+
+</head>
+<body>
+    <div class="box">
+        <p><input type="checkbox" id="selector">全选/全不选</p>
+        <input type="checkbox" value="足球" name="sport">足球<br />
+        <input type="checkbox" value="篮球" name="sport">篮球<br />
+        <input type="checkbox" value="排球" name="sport">排球<br />
+        <input type="checkbox" value="羽毛球" name="sport">羽毛球<br /><br />
+        <button id="selectAll">全选</button>
+        <button id="selectNo">全不选</button>
+        <button id="revSelect">反选</button>
+        <button id="submitBtn">提交</button>
+    </div>
+</body>
+
+<script type="text/javascript" src="clickEvent.js"></script>
+
+<script>
+    window.onload=function(){
+        var sportCheckBox = document.getElementsByName("sport")
+        var selector = document.getElementById("selector")
+        //全选
+        clickEvent("selectAll",function(){
+            
+            for(var i=0;i<sportCheckBox.length;i++){
+                sportCheckBox[i].checked = true 
+            }
+            selector.checked = true 
+        })
+
+        //全不选
+        clickEvent("selectNo",function(){
+            
+            for(var i=0;i<sportCheckBox.length;i++){
+                sportCheckBox[i].checked = false  
+            }
+            selector.checked = false 
+        })
+
+        //反选
+        clickEvent("revSelect",function(){
+            
+            for(var i=0;i<sportCheckBox.length;i++){
+                sportCheckBox[i].checked = !sportCheckBox[i].checked
+                selector.checked = true
+                if(!sportCheckBox[i].checked){
+                        selector.checked = false 
+                }
+            }
+
+        })
+
+        //提交
+        clickEvent("submitBtn",function(){
+           
+            for(var i=0;i<sportCheckBox.length;i++){
+                if(sportCheckBox[i].checked){
+                    alert(sportCheckBox[i].value)
+                }
+            }
+        })
+
+        //全选或者全不选
+        clickEvent("selector",function(){
+            
+           
+            for(var i=0;i<sportCheckBox.length;i++){
+                sportCheckBox[i].checked = selector.checked
+            }            
+        })
+
+
+        //为所有sports的checkbox绑定一个点击事件
+        for(var i=0;i<sportCheckBox.length;i++){
+            
+            sportCheckBox[i].onclick = function(){
+                selector.checked = true
+                for(var j=0;j<sportCheckBox.length;j++){
+                    if(!sportCheckBox[j].checked){
+                        selector.checked = false
+                        break;
+                    }
+                }
+            }
+        }
+        
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box1,#box2{
+           border: 1px solid #000;
+           background: green;
+           width: 200px;
+           height: 200px;
+           margin: 10px;
+           display: inline-block;
+        }
+        #box1{
+            
+            background:palevioletred;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">你好</div>
+    <div id="box2">你好</div>
+
+    <button id="btnHide">隐藏box1</button>
+    <button id="btnShow">显示box1</button>
+</body>
+<script type="text/javascript" src="clickEvent.js"></script>
+<script>
+    window.onload = function(){
+        clickEvent("btnHide",function(){
+            var box1Obj = document.querySelector("#box1")
+            box1Obj.style.display = "none"
+        })
+
+        clickEvent("btnShow",function(){
+            var box1Obj = document.querySelector("#box1")
+            //box1Obj.style.display = "block"
+            box1Obj.style.display = "inline-block"
+            //box1Obj.style.display = "" //这种代码尽量不要写
+        })       
+    }
+</script>
+</html>
