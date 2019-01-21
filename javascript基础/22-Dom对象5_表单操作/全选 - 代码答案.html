@@ -35,73 +35,67 @@
 
 <script>
     window.onload=function(){
-        var sportCheckBox = document.getElementsByName("sport")
-        var selector = document.getElementById("selector")
-        //全选
+        //获取所有的体育项目checkbox
+        var sports = document.getElementsByName("sport")
+        //获取全选和全不选按钮
+        var selectorBtn =  document.getElementById("selector")
+        //实现全选
         clickEvent("selectAll",function(){
-            
-            for(var i=0;i<sportCheckBox.length;i++){
-                sportCheckBox[i].checked = true 
+            //遍历所有的体育项目
+            for(var i=0;i<sports.length;i++){
+                sports[i].checked = true 
             }
-            selector.checked = true 
         })
 
-        //全不选
+        //实现全不选
         clickEvent("selectNo",function(){
-            
-            for(var i=0;i<sportCheckBox.length;i++){
-                sportCheckBox[i].checked = false  
+            //遍历所有的体育项目
+            for(var i=0;i<sports.length;i++){
+                sports[i].checked = false
             }
-            selector.checked = false 
         })
 
-        //反选
+        //实现反选功能
         clickEvent("revSelect",function(){
-            
-            for(var i=0;i<sportCheckBox.length;i++){
-                sportCheckBox[i].checked = !sportCheckBox[i].checked
-                selector.checked = true
-                if(!sportCheckBox[i].checked){
-                        selector.checked = false 
-                }
+            //遍历所有的体育项目
+            for(var i=0;i<sports.length;i++){
+                sports[i].checked =  !sports[i].checked
             }
-
         })
-
-        //提交
+       
+        //提交功能
         clickEvent("submitBtn",function(){
-           
-            for(var i=0;i<sportCheckBox.length;i++){
-                if(sportCheckBox[i].checked){
-                    alert(sportCheckBox[i].value)
+            var data = []
+            for(var i=0;i<sports.length;i++){
+                if(sports[i].checked){
+                    //alert(sports[i].value)
+                    data.push(sports[i].value)
                 }
-            }
+            } 
+            alert(data.toString())        
         })
 
-        //全选或者全不选
+        //全选和全不选
         clickEvent("selector",function(){
-            
-           
-            for(var i=0;i<sportCheckBox.length;i++){
-                sportCheckBox[i].checked = selector.checked
-            }            
+              //遍历所有的体育项目
+              for(var i=0;i<sports.length;i++){
+                sports[i].checked =  selectorBtn.checked
+            }          
         })
 
-
-        //为所有sports的checkbox绑定一个点击事件
-        for(var i=0;i<sportCheckBox.length;i++){
-            
-            sportCheckBox[i].onclick = function(){
-                selector.checked = true
-                for(var j=0;j<sportCheckBox.length;j++){
-                    if(!sportCheckBox[j].checked){
-                        selector.checked = false
+        //为每一个体育选项绑定点击事件
+        for(var i=0;i<sports.length;i++){
+            sports[i].onclick = function(){
+                selectorBtn.checked = true
+                for(var j=0;j<sports.length;j++){
+                    //只要体育选项有１项未被选中selectorBtn.checked就等于false
+                    if(!sports[j].checked){
+                        selectorBtn.checked = false
                         break;
                     }
                 }
             }
-        }
-        
+        }          
 
     }
 </script>
