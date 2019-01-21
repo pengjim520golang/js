@@ -45,6 +45,8 @@
             for(var i=0;i<sports.length;i++){
                 sports[i].checked = true 
             }
+            //实现全选的同时把全选和不全选按钮的checked=true
+            selectorBtn.checked = true 
         })
 
         //实现全不选
@@ -53,13 +55,20 @@
             for(var i=0;i<sports.length;i++){
                 sports[i].checked = false
             }
+            //实现全选的同时把全选和不全选按钮的checked=false
+            selectorBtn.checked = false
         })
 
         //实现反选功能
         clickEvent("revSelect",function(){
+            selectorBtn.checked = true
             //遍历所有的体育项目
             for(var i=0;i<sports.length;i++){
                 sports[i].checked =  !sports[i].checked
+                if(!sports[i].checked){
+                    selectorBtn.checked = false
+                }
+                
             }
         })
        
@@ -71,8 +80,11 @@
                     //alert(sports[i].value)
                     data.push(sports[i].value)
                 }
-            } 
-            alert(data.toString())        
+            }
+            if(data.length>0)
+                alert(data.toString())
+            else
+                alert("必须要选择一个体育项目进行提交．．")      
         })
 
         //全选和全不选
@@ -80,7 +92,7 @@
               //遍历所有的体育项目
               for(var i=0;i<sports.length;i++){
                 sports[i].checked =  selectorBtn.checked
-            }          
+              }          
         })
 
         //为每一个体育选项绑定点击事件
