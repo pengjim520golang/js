@@ -1,0 +1,55 @@
+<script>
+    //声明一个Date对象
+    var date = new Date()
+    console.log(date)
+    // +会进行一个隐式的数据类型转换，这里面是把date转换为UTC的unix时间戳
+    console.log(+date)
+
+    //获取一个月份中的日期
+    console.log( "日期:",date.getDate() )
+    //获取一个月份
+    console.log("月份:",date.getMonth()+1 )
+    //获取星期
+    console.log("星期:",date.getDay() )
+    
+    Date.prototype.getWeek = function(prefix){
+        var day = this.getDay();
+        prefix = prefix !== undefined ? prefix : "星期"
+        var week = ""
+        switch(day){
+            case 0: 
+                week = "天"
+                break;
+            case 1:
+                week = "一"
+                break;
+            case 2:
+                week = "二"
+                break;  
+            case 3:
+                week = "三"
+                break;
+            case 4:
+                week = "四"
+                break;
+            case 5:
+                week = "五"
+                break; 
+            case 6:
+                week = "六"
+                break;                  
+
+        }
+        return prefix + week;
+    }
+    //获取星期
+    console.log(date.getWeek() )
+    console.log(date.getWeek("周") )
+
+    //获取年
+    console.log(date.getFullYear() )
+
+    //获取小时
+    console.log("小时:",date.getHours(),",分钟:",date.getMinutes(),"秒:",date.getSeconds())
+
+</script>
