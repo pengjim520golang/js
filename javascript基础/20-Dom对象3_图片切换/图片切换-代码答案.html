@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        
+        #picBox{
+            margin: 50px auto;
+            background:green;
+            width: 500px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #info{
+            color: #ffffff;
+            font-family:'Arial';
+            font-size:18px;
+            line-height: 28px;
+            height: 28px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="picBox">
+        <p id="info"></p>
+        <img src="img/1.jpg" id="pic">
+        <br /> <br />
+        <button id="prevPic">上一张</button>
+        <button id="nextPic">下一张</button>
+    </div>
+</body>
+
+
+<script>
+    //封装点击事件
+    function clickEvent(btnEl,btnEvent){
+        //实例一个按钮对象
+        var btn = document.querySelector("#"+btnEl)
+        //把按钮的onclick属性指向一个事件
+        btn.onclick = btnEvent
+    }
+
+    window.onload = function(){
+        //获取图片信息p标签
+        var imgInfo = document.querySelector("#info")
+        //获取图片标签
+        var imgObj = document.querySelector("#pic")
+        //声明一个图片的数组
+        var imgs = ["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg"]
+        //定义图片默认从第1图片开始切换
+        var index = 0
+
+        //初始化图片信息标签的内容
+        imgInfo.innerHTML = "一共有" + imgs.length + "张图片,当前是第" + (index+1) + "张图片"
+
+
+        //绑定上一张图片的按钮
+        clickEvent("prevPic",function(){
+            index = index > 0 ? index-1 : imgs.length - 1
+            //实现图片上一张的切换
+            imgObj.src = imgs[index]
+            //修改图片信息标签的内容
+            imgInfo.innerHTML = "一共有" + imgs.length + "张图片,当前是第" + (index+1) + "张图片"
+        })
+
+        //绑定下一张图片的按钮
+        clickEvent("nextPic",function(){
+            index ++;
+            if(index > imgs.length-1){
+                index = 0
+                //index = imgs.length - 1
+            }
+            //实现图片下一张的切换
+            imgObj.src = imgs[index]
+            //修改图片信息标签的内容
+            imgInfo.innerHTML = "一共有" + imgs.length + "张图片,当前是第" + (index+1) + "张图片"
+
+        })
+
+    }
+</script>
+</html>
