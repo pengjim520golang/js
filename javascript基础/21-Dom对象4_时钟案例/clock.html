@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #clock{
+            width: 500px;
+            height: 48px;
+            line-height: 48px;
+            font-size: 48px;
+            background: green;
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            top:0;
+            left: 0;
+            bottom:0 ;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="clock">内容正在加载中....</div>
+</body>
+
+
+
+<script>
+    //定义一个获取当前时间的函数，格式为"Y-m-d H:i:s"  2019-09-10 23:01:33
+    function Now(){
+        //创建一个时间日期对象
+        var date = new Date();
+        //获取2019
+        var Y = date.getFullYear(); 
+        //实现补零算法，1-9都会补零 
+        var m = date.getMonth()+1 > 9 ? date.getMonth()+1 : "0" + (date.getMonth()+1)
+        //获取日期
+        var d = date.getDate() > 9 ? date.getDate() : "0" + date.getDate()
+        //获取小时
+        var H = date.getHours() > 9 ? date.getHours() : "0" + date.getHours()
+        //获取分钟
+        var i = date.getMinutes() > 9 ? date.getMinutes() : "0" + date.getMinutes()
+        //获取秒
+        var s = date.getSeconds() > 9 ? date.getSeconds() : "0" + date.getSeconds()
+
+        return Y + "-" + m + "-" + d + " " + H + ":" + i + ":" + s
+    }
+
+    //定义dom加载事件
+    window.onload = function(){
+        
+        //获取clock
+        var clockObj = document.getElementById("clock")
+        setInterval(function(){
+            var now = Now()
+            clockObj.innerHTML = now 
+        },1000)
+
+    }
+
+</script>
+</html>
