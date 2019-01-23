@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            border: 1px solid #000;
+            background: green;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="box">box-1</div>
+
+    <button id="btnShow">show</button>
+    <button id="btnHide">hide</button>
+    <button id="btnRemove">remove</button>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+
+<script>
+//document.getElementById("btnShow") --> document.querySelector("#btnShow")
+$("#btnShow").click(function(){
+    //$("#box").show("slow") 
+    //$("#box").fadeIn(3000)
+    $("#box").slideDown("slow")
+})
+
+$("#btnHide").click(function(){
+    $("#box").hide("slow") 
+})
+
+$("#btnRemove").click(function(){
+    $("#box").remove() 
+   
+})
+
+var arr = [1,1,33,11,1,234,3]
+$.unique(arr)
+
+console.log(arr)
+
+</script>
+
+
+</html>

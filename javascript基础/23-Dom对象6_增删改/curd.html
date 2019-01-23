@@ -1,1 +1,124 @@
-时代发生的发生
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            border: 1px solid #ccc;
+            margin: 50px auto;
+            width: 500px;
+            height: 500px;
+        }
+        li{
+            background: green;
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+            line-height: 28px;
+            list-style: none;
+            float: left;
+            margin: 10px;
+            width: 100px;
+            border: 1px solid #000;
+        }
+        .btn{
+            background: pink;
+        }
+        a{
+            
+            text-decoration-line: underline;
+            font-weight: bold;
+        }
+    
+    </style>
+</head>
+<body>
+    
+
+    <ul id="city">
+        <li id="gz">广州</li>
+        <li id="sz">深圳</li>
+        <li id="zh">珠海</li>
+        <li id="zs">中山</li>
+        <li class="btn"><a href="javascript:void(0);" id="gzBtn">删除广州节点</a></li>
+        <li class="btn"><a href="javascript:void(0);"  id="szBtn">取代深圳节点为北京节点</a></li>
+        <li class="btn"><a href="javascript:void(0);"  id="zsBtn">在中山节点之前加入天津节点</a></li>
+    </ul>
+
+<script>
+function clickEvent(btnElement,btnEvent){
+    //动态创建一个按钮属性
+    var btn = document.querySelector("#" + btnElement)
+    //实现事件的onclick
+    btn.onclick = btnEvent
+}
+
+window.onload = function(){
+    clickEvent("gzBtn",function(){
+        /*
+        var gzNode = document.getElementById("gz");
+        gzNode.parentNode.firstElementChild.remove(); //最符合标准的方式，但是不符合直觉*/
+        
+
+        //var szParent = document.getElementById("city")
+        //szParent.firstElementChild.nextElementSibling.remove()
+
+        var gzNode = document.getElementById("gz")
+        gzNode.remove()
+   
+        
+
+        
+    })
+
+    clickEvent("szBtn",function(){
+        var city = document.getElementById("city")
+        var szNode = document.getElementById("sz")
+        //创建一个新节点，叫li属于北京节点
+        var bjNode = document.createElement("li") //<li><li>
+        //创建一个北京节点的文本节点
+        var bjText = document.createTextNode("北京")
+        //为北京找爸爸
+        bjNode.appendChild(bjText) //<li>北京<li>
+        bjNode.setAttribute("id","bj")
+        //console.log(bjNode)
+        city.replaceChild( bjNode ,szNode)
+
+    })
+
+    clickEvent("zsBtn",function(){
+        var city = document.getElementById("city")
+        //获取中山节点
+        var zsNode = document.getElementById("zs")
+        //创建li节点，为天津节点
+        var tjNode = document.createElement("li")
+        tjNode.setAttribute("id","tj")
+        //为天津节点添加文本节点天津
+        var tjText = document.createTextNode("天津")
+        tjNode.appendChild(tjText)
+
+        //添加天津节点到中山之前
+        city.insertBefore(tjNode,zsNode)
+
+
+
+    })
+
+
+
+
+
+}
+
+
+</script>
+
+</body>
+</html>
