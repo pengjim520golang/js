@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    username:<input type="text" name="txtUsername" id="txtUsername">
+    password:<input type="password" name="txtPassword" id="txtPassword">
+    <input type="radio" name="gender" value="male" checked>男 <input type="radio" name="gender" value="fmale">女
+
+    <select id="city">
+        <option value="-1" selected>---请选择---</option>
+        <option value="深圳">深圳</option>
+        <option value="北京">北京</option>
+        <option value="广州">广州</option>
+    </select>
+
+    <input type="checkbox" name="sport" value="足球" checked>足球
+    <input type="checkbox" name="sport" value="篮球">篮球
+    <input type="checkbox" name="sport" value="排球" checked>排球
+
+
+
+    <button id="submitBtn">Submit</button>
+</body>
+
+
+
+<script src="js/jquery1.7.1.min.js"></script>
+<script>
+    $(function(){
+        //选中所有的radio标签
+        $(":radio").css("border","1px solid #000")
+        //选择radio标签为chekced=true的元素
+        console.log( $(":radio:checked").val() )
+        //城市选择
+        $("#submitBtn").click( function(){
+            alert( $(":password").val() )
+            //alert( $("#city >option:selected").val() )
+            var citySelector = $("#city >option:selected").val()
+            if(parseInt( citySelector )===-1){
+                alert("请选择一个具体的城市")
+            }else{
+                alert(citySelector)
+            }
+
+        })
+
+        //复选框
+        $(":checkbox:checked").each(function(){
+            console.log( this )
+            this.checked = false
+
+        })
+        
+        //选择密码框
+        //$(":password").css("background","red")
+        //$(":password").val("123456")
+        $("input[type=password]").css("background","green")
+
+
+
+    })
+</script>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="apps">
+        <li>app-1</li>
+        <li>app-2</li>
+        <li>app-3</li>
+        <li>app-4</li>
+        <li><span>span-5</span></li>
+        <li>app-6</li>
+        <li><span>span-7</span></li>
+    </ul>
+
+    <hr />
+    <input type="text" name="username">
+
+    <input type="text" name="love">
+    <input type="text" name="love">
+    <input type="text" name="love">
+
+
+    <input type="text" name="num">
+    <input type="text" name="num">
+    <input type="text" name="num">
+
+    <p>pppppppp</p>
+
+
+    <hr>
+
+    <span>span-1</span>
+    <span>span-2</span>
+    <span>span-3</span>
+
+    <hr>
+
+    <ol>
+        <li class="liCss">li-1</li>
+        <li class="liStyle">li-1</li>
+        <li class="liCss">li-1</li>
+        <li class="liStyle">li-1</li>
+    </ol>
+
+
+    <button class="liCss">liCss btn</button>
+
+</body>
+
+<script src="js/jquery1.7.1.min.js"></script>
+<script>
+    $(function(){
+        //选择apps下所有的span元素
+        $("#apps > li > span").css("background","red")
+        $("#apps li > span").css("background","green")
+        $("#apps li span").css("background","yellow")
+        $("#apps span").css("background","greenyellow")
+        //$("#apps > span").css("background","#ccc") >号是选择子元素，无法选择更深层次的元素
+        
+        //:first是选择直接父元素的第1个子元素
+        $("#apps :first").css("font-size","48px")
+
+        //:first-child只要是第1个子元素就被选择
+        $("#apps :first-child").css("font-size","48px")
+    })
+
+</script>
+</html>

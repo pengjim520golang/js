@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="apps">
+        <li>app-1</li>
+        <li>app-2</li>
+        <li>app-3</li>
+        <li>app-4</li>
+        <li>app-5</li>
+        <li>app-6</li>
+    </ul>
+
+
+</body>
+
+<script src="js/jquery1.7.1.min.js"></script>
+<script>
+    $(function(){
+        //选择apps下第2个直接子元素
+        //$("#apps > li:gt(0)").css("background","yellow") //no
+       
+        //$("#apps > li:gt(0):lt(1)").css("background","yellow") //yes
+        //$("#apps > li:gt(0):lt(2)").css("background","yellow") //no
+        $("#apps > li:lt(2):gt(0)").css("background","green") //yes
+
+        //选择apps下第4个直接子元素
+        $("#apps > li:gt(2):lt(1)").css("background","green") //yes
+        $("#apps > li:lt(4):gt(2)").css("background","red") //yes
+
+        
+    })
+
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+<body>
+    输入内容:<input type="text" id="srcContents">
+    复制内容:<input type="text" id="cpContents">
+</body>
+
+<script src="js/jquery1.7.1.min.js"></script>
+<script>
+
+    $("#srcContents").on("blur",function(){
+        $("#cpContents").val( this.value )
+    })
+
+        // $("#srcContents").blur(function(){
+        //      $("#cpContents").val( this.value )
+        // })
+
+</script>
+</html>

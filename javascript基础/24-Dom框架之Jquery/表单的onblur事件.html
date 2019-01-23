@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+<body>
+    输入内容:<input type="text" id="srcContents" onblur="copy();">
+    复制内容:<input type="text" id="cpContents">
+</body>
+
+
+<script>
+    function copy(){
+        //获取输入内容的原始数据框
+        var srcTxt = document.getElementById("srcContents") 
+        //获取要被复制的数据框
+        var cpTxt = document.getElementById("cpContents")
+        //赋值操作
+        cpTxt.value = srcTxt.value 
+    }
+
+</script>
+</html>

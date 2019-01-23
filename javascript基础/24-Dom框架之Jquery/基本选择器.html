@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="apps">
+        <li>app-1</li>
+        <li>app-2</li>
+        <li>app-3</li>
+        <li>app-4</li>
+        <li>app-5</li>
+        <li>app-6</li>
+        <li>app-7</li>
+
+    </ul>
+
+    <hr />
+    <input type="text" name="username">
+
+    <input type="text" name="love">
+    <input type="text" name="love">
+    <input type="text" name="love">
+
+
+    <input type="text" name="num">
+    <input type="text" name="num">
+    <input type="text" name="num">
+
+    <p>pppppppp</p>
+
+
+    <hr>
+
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <hr>
+
+    <ol>
+        <li class="liCss">li-1</li>
+        <li class="liStyle">li-1</li>
+        <li class="liCss">li-1</li>
+        <li class="liStyle">li-1</li>
+    </ol>
+
+
+    <button class="liCss">liCss btn</button>
+
+</body>
+
+<script src="js/jquery1.7.1.min.js"></script>
+<script>
+    $(function(){
+        //使用id选择器选择元素
+        $("#apps").css("background","yellowgreen")
+        //使用name选择元素:$("标签名[name=属性name的名称]")
+        $("input[name=username]").css("background","red")
+        $("input[name=username]").val("pengjin")//val()就是设置值
+        //如果name存在重复，就同时选择所有符合条件的元素
+        $("input[name=love]").css("background","yellow")
+        //遍历设置多个元素的值,如果使用了遍历,对象中设置值不能使用val()函数
+        $("input[name=num]").each(function(index,item){
+            console.log(index,item,typeof item)
+            item.value = "索引" + index
+        })
+        //使用标签名称获取所有的span 
+        $("span").css("background","#ccc")
+        $("span").html("span object") // html()相当于innerHTML
+        $("span").each(function(index,item){
+            //console.log(item)
+            //item.html("index="+index)
+            item.innerHTML = "index=" + index
+        })
+        //选择class含有liCss的li元素
+        //class选择器：$(".class名称")选中所有含有该名称的元素,$("指定元素名称.class名称")选中指定元素中含所有class的元素
+        $("li.liCss").css("background","blue")
+    })
+
+</script>
+</html>
