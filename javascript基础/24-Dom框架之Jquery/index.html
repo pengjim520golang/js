@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <p>username:<span id="username"></span></p> 
+   <p>password:<span id="password"></span></p> 
+</body>
+
+
+<script src="https://cdn.bootcss.com/jquery/1.7/jquery.min.js"></script>
+
+<script>
+    $(function(){
+        //执行ajax的调用
+        $.ajax({
+            //url属性负责被ajax对象请求
+            url:"http://localhost/ajax/data/user.json",
+            //告诉ajax对象请求的数据格式和处理的方式都以json格式为主
+            dataType:"json",
+            // error:function(){
+            //     //alert("请求失败")
+            //     // window.location = "http://www.baidu.com"
+            // },
+
+            success:function(res){
+                //console.log(res.username,res.password)
+                $("#username").html(res.username) 
+                $("#password").html(res.password) 
+            }
+        })
+    })
+
+</script>
+
+
+
+
+</html>
