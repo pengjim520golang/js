@@ -86,7 +86,7 @@
        //inner函数会提升
        function inner(){
            //inner函数调用的变量i在wrap函数的作用域中
-           console.log(i)
+           console.log(++i)
        }
        return inner;
    }
@@ -95,3 +95,6 @@
    f(); //这时访问到的i来自闭包对象
 </script>
 ```
+
+注意:闭包产生在inner函数内部,当wrap被调用时就产生了。i之所以在wrap调用结束后还能被调用到,那是因为闭包的原因,但inner之所以能被调用到那时因为变量f一直引用这inner函数,而不是因为闭包的原因。
+
