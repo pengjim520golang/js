@@ -70,7 +70,7 @@
 
 现在我们已经体验了闭包的最基本作用,现在我们就需要来深入了解一下闭包的相关知识点。
 
-# 闭包的概念
+# 闭包的产生
 
 闭包其本质是一个c++的对象,其产生必须具备以下条件：
 
@@ -93,8 +93,124 @@
 
    var f = wrap();  //外部函数调用,inner就会被定义,这时闭包马上产生
    f(); //这时访问到的i来自闭包对象
+   f();
+   f();
 </script>
 ```
 
 注意:闭包产生在inner函数内部,当wrap被调用时就产生了。i之所以在wrap调用结束后还能被调用到,那是因为闭包的原因,但inner之所以能被调用到那时因为变量f一直引用这inner函数,而不是因为闭包的原因。
 
+外部函数调用一次就会产生一个新的闭包,假设把如下调用修改如下:
+
+```html
+<script>
+   function wrap(){
+       //变量i在wrap的作用域中
+       var i = 100;
+       //inner函数会提升
+       function inner(){
+           //inner函数调用的变量i在wrap函数的作用域中
+           console.log(++i)
+       }
+       return inner;
+   }
+
+   wrap()();
+   wrap()();
+   wrap()();
+   
+</script>
+```
+
+以上一共产生了3个闭包,这3个闭包是独立的互不影响.如果你希望手动销毁闭包,那么可以修改代码如下:
+```html
+<script>
+   function wrap(){
+       //变量i在wrap的作用域中
+       var i = 100;
+       //inner函数会提升
+       function inner(){
+           //inner函数调用的变量i在wrap函数的作用域中
+           console.log(++i)
+       }
+       return inner;
+   }
+   
+   var f = wrap();
+   f = null;
+   
+</script>
+```
+
+在开发中尽量避免使用和出现`鸡肋闭包`,大量的鸡肋闭包会导致内存溢出的可能性,如下代码就是`鸡肋闭包`:
+
+```html
+<script>
+   function wrap(){
+       //变量i在wrap的作用域中
+       var i = 100;
+       //inner函数会提升
+       function inner(){
+           //inner函数调用的变量i在wrap函数的作用域中
+           console.log(++i)
+       }
+       inner()
+   }
+
+   wrap();
+   wrap();
+   wrap();
+   wrap();
+   wrap();
+</script>
+```
+
+# 闭包的应用
+
+闭包在现今的js开发中一般是用于定义模块,俗称js模块化的定义（js模块化有自己的规范,node使用的js模块化规范是CommonJs,但其本质最后都是闭包）,现在我们就尝试定义一个简单的js模块
+
+```html
+<script>
+    function myModule(){
+        var world = "This is a teacher"
+        function Upper(){
+            console.log("upper is " + world.toUpperCase() )
+        }
+        function Lower(){
+            console.log("lower is " + world.toLowerCase() )
+        }
+
+        return {
+            Upper:Upper,
+            Lower:Lower
+        }
+    }
+    var m = myModule()
+    m.Upper()
+    m.Lower()
+</script>
+```
+
+以上更为专业的定义其实如下：
+
+
+```html
+<script>
+    (function(win){
+        var world = "This is a teacher"
+        function Upper(){
+            console.log("upper is " + world.toUpperCase() )
+        }
+        function Lower(){
+            console.log("lower is " + world.toLowerCase() )
+        }
+        win.MyModule = {
+            Upper:Upper,
+            Lower:Lower
+        }
+    })(window)
+
+    MyModule.Upper();
+    MyModule.Lower();
+</script>
+```
