@@ -45,3 +45,23 @@
 </html>
 ```
 
+我们的直觉会认为这样的写法没有问题,逻辑也没有问题.然而你会发觉这根本无法完成我们的需求。于是我们把js代码修改如下:
+
+```html
+<script type="text/javascript">
+    window.onload = function(){
+        //选择所有的div元素
+        var items = document.querySelectorAll(".box")
+        //把items的伪数组转化为真数组
+        var divs = Array.prototype.slice.apply(items)
+        for(var i=0;i<divs.length;i++){
+            (function(i){
+                //在立即执行函数中，遍历所有的div,为每个div元素绑定onclick事件
+                items[i].onclick = function(){
+                    alert(i)
+                }
+            })(i)
+        }
+    }
+</script>
+```
