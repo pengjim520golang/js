@@ -134,5 +134,21 @@ define(function(require,exports,module){
 
 seajs提出的讲解方案后,nodejs提出了在其基础上提出commonjs等方案,使得模块化变得更加直接简单。
 
+# 使用commonjs进行模块化
+
+commonjs是nodejs的解决方案,前提是我们需要安装node和npm,并且使用npm安装编译工具browserify.
+
+### browserify安装步骤
+
+* 点击下载nvm安装包,并按照nvm
+
+* 使用命令nvm install 8.11.4,安装nodejs
+
+* 使用npm install browserify -g安装browserify
+
+
+
+
+
 
 
