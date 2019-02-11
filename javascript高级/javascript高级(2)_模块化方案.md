@@ -242,3 +242,51 @@ module.exports = {
 ```
 
 以上过程操作无误就是commonjs模块化的结果.
+
+# es6模块化方案
+
+es6模块化目前是世界上唯一由官方提出的模块化方案,但目前后端尚未支持该方案,但相信在不久的将来es6模块化方案将统一js的前后端开发。
+需要使用es6模块化需要安装webpack。
+
+#### 安装webpack3.10.0
+
+```
+npm install -g webpack@3.10.0 
+```
+
+使用es6模块化方式export对外暴露common函数
+
+```javascript
+//es6模块化使用export关键字对外暴露静态的代码块
+export function common(){
+    return "es6 common function return value."
+}
+```
+
+使用import关键字导入common库并且使用export关键字的第2种方式对外暴露多个函数
+
+```javascript
+//导入需要使用的依赖库
+import {common} from "./common/common.js"
+
+function Run(){
+    console.log( "zhangsan of run,common="+common() )
+}
+
+function Go(){
+    console.log( "zhangsan of go,common="+common() )
+}
+
+function Play(){
+    console.log( "zhangsan of play,common="+common() )
+}
+
+export {
+    //在es6的对象中如果方法名和属性名一致可以省略属性名,这里相当于Run:Run 
+    Run,  
+    Go,
+    Play 
+}
+```
+
+
