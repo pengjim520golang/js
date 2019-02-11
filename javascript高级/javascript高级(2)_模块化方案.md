@@ -290,3 +290,34 @@ export {
 ```
 
 
+编写入口文件index.js
+
+```javascript
+//as是把暴露的函数作为对象属性名导入
+import * as pengjin from "./pengjin.js";
+import * as zhangsan from "./zhangsan.js";
+
+window.onload = function(){
+    pengjin.Run();
+    pengjin.Go();
+    pengjin.Play();
+
+    zhangsan.Run();
+    zhangsan.Go();
+    zhangsan.Play();
+}
+```
+
+使用webpack编译入口文件:
+
+```
+webpack ./index.js ../dist/index.js
+```
+
+在index.html引入./dist/index.js文件
+
+```html
+<script src="./dist/index.js"></script>
+```
+
+以上操作无误就是es6的模块化方案
