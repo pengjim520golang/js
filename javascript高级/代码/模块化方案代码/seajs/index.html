@@ -1,0 +1,10 @@
+<script src="https://cdn.bootcss.com/seajs/1.3.1/sea.min.js"></script>
+<script>
+
+    // 加载多个模块，在加载完成时，执行回调
+    seajs.use(['./js/lisi','./js/zhangsan','./js/pengjin'], function(lisi,zhangsan,pengjin) {
+        lisi.Run()
+        zhangsan.Go()
+        pengjin.Play()
+    });
+</script>
