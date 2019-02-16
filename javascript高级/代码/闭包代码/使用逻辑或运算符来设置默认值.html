@@ -1,0 +1,15 @@
+<script>
+
+    function setConfig(opt){
+        opt = opt || {} 
+        //console.log(opt)
+        var mySqlPort = opt.port || 3306;
+        return mySqlPort;
+    }
+    var cnf = {
+        port:8807
+    }
+    var port = setConfig(cnf) //opt传值undefined，opt就是空对象
+
+    console.log(port)
+</script>
