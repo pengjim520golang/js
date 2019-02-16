@@ -1,0 +1,24 @@
+<script>
+
+        var that = null //that是一个全局变量，作用在于记住某个函数中的this对象
+
+        function Person(name,age,gender){ //隐含一个属性this.prototype
+            this.name = name 
+            this.age = age
+            this.gender = gender 
+            //把this放置到全局当中
+            that = this 
+        }
+    
+    
+        function showInfomation(){
+            //this = that 错误
+            //console.log(this.name,this.age,this.gender)
+            console.log(that.name,that.age,that.gender)
+        }
+    
+        new Person("zs",55,"fmale") //构造函数调用
+        showInfomation() //普通调用,this是window,that是Person
+    
+    
+    </script>

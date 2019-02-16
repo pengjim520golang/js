@@ -1,0 +1,19 @@
+<script>
+    function Person(name,age,gender){ //隐含一个属性this.prototype
+        this.name = name 
+        this.age = age
+        this.gender = gender  
+    }
+
+
+    Person.prototype.showInfomation = function(){
+        console.log(this.name,this.age,this.gender)
+    }
+
+    //函数的第3种调用方式是以构造函数的方式进行调用
+    var zs = new Person("zhangsan",33,"male")
+    console.log(zs) //Person
+    zs.showInfomation()
+
+
+</script>

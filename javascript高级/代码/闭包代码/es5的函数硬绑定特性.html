@@ -1,0 +1,25 @@
+<script>
+
+       
+        window.name = "pengjin"
+        function Person(name,age,gender){ //隐含一个属性this.prototype
+            this.name = name 
+            this.age = age
+            this.gender = gender 
+
+        }
+    
+        //使用匿名函数定义的方式可以实现bind的方式改变this
+        var showInfomation = function(){
+            
+            //相当于内部有一句代码是this = new Person("zs",55,"fmale")
+            console.log(this.name,this.age,this.gender)
+           
+        }.bind(new Person("zs",55,"fmale"))
+    
+       
+        
+        showInfomation()
+    
+    
+    </script>

@@ -1,0 +1,55 @@
+<button id="btn">提交</button>
+
+
+<script>
+    //Function实际是函数对象的构造函数
+    var fn = new Function("console.log('xxxxx')")
+    fn();
+    //定义函数的时候一般使用function关键字
+    function demo(){
+        /**
+        1.如果函数使用普通调用的形式demo();那么this就是window
+        2.如果函数作为对象的方法进行调用那么this就是当前的对象
+        **/
+        console.log(this)
+    }
+
+    var obj = {
+        demo:demo
+    }
+
+    demo();
+    obj.demo()
+
+
+    var btnObj = document.getElementById("btn")
+    //btnObj.onclick = demo; //习惯这样定义事件
+
+    btnObj.addEventListener("click",demo)
+
+
+    //获取键盘的上下左右键的ascii码值是多少,addEventListener函数的好处在于多了一个事件参数
+    
+
+    document.addEventListener("keydown",function(e){
+        //console.log(e.keyCode),e.keyCode可以获取键盘中的ascii码值
+        switch(e.keyCode){
+            case 37:
+                alert("你按下了方向键的left")
+                break;
+            case 38:
+                alert("你按下了方向键的top")
+                break;   
+            case 39:
+                alert("你按下了方向键的right")
+                break; 
+            case 40:
+                alert("你按下了方向键的bottom")
+                break;    
+        }
+        
+    })
+
+
+
+</script>
