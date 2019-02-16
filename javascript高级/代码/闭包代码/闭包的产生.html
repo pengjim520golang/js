@@ -1,0 +1,21 @@
+<script>
+    //1.必须有一个外部的函数（包裹函数）
+    //2.必须要有一个内部的函数
+    //3.内部函数应用了外部函数（包裹函数）的变量
+    //4.外部函数被调用的时候，且外部函数的作用域能记住的变量被称为闭包
+    //永远记住：闭包是一个c++维护的js对象，它产生在内部函数的作用域当中与外部函数的作用域无关，它只是记住了外部函数作用域中所定义的变量
+
+    function Container(){
+        var message = "this is a teacher" //message在Container的作用域中被定义了
+        var test = "test"
+        function inner(){
+            console.log(message) //当前的inner作用域没有,message定义在包裹函数的作用域中，这里只是被引用了
+        }
+        return inner 
+    }
+
+    var fn = Container();  //fn获取的是一个函数,Container调用后作用域就结束了变量就会被回收，所以test被回收了，然而message被记住了
+    fn() //打印也就是说打印了变量message中的内容this is a teacher ，因为Container作用域中的message被记住了，所以fn()可以访问
+    fn() //找个fn无论被调用多少次，闭包永远只有一个
+
+</script>

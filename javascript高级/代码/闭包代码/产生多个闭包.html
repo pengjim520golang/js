@@ -1,0 +1,20 @@
+<script>
+
+    function wrap(){
+
+        var count = 0 ;
+        function inner(){ //闭包是产生在inner
+            count ++ 
+            console.log(count)
+        }      
+
+
+        return inner;
+    }
+
+    wrap()()
+    wrap()()
+    wrap()()
+    wrap()()
+    wrap()()
+</script>

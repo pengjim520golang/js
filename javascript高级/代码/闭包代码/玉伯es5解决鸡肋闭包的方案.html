@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 在html中有3个按钮或者3个div，点击第1个按钮打印0，点击第2个按钮打印1，点击第3个按钮打印2 -->
+    <button>点击我打印0</button>  <!-- <button index=0>点击我打印0</button>  -->
+    <button>点击我打印1</button>  <!-- <button index=1>点击我打印1</button>  -->
+    <button>点击我打印2</button>  <!-- <button index=2>点击我打印2</button>  -->
+
+</body>
+
+<script>
+    var btns = document.getElementsByTagName("button")
+    var arr = Array.prototype.slice.apply(btns)
+
+    for(var i =0;i<arr.length;i++){
+        btns[i].index = i 
+        btns[i].onclick = function(){
+            alert( this.index )
+        }
+    }
+   
+</script>
+
+</html>

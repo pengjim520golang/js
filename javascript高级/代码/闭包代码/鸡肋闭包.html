@@ -1,0 +1,12 @@
+<script>
+    function Container(){
+        var message = "this is a teacher" 
+        var test = "test"
+        function inner(){
+            console.log(message) 
+        }
+        inner(); //在包裹函数中调用内部函数,如果没有返回则在外部无法获取inner找个函数的引用
+    }
+    Container() //闭包被使用了一次之后，就不能再用了，但是闭包的生命周期依然存在
+    Container()
+</script>

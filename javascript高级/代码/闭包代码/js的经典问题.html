@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 在html中有3个按钮或者3个div，点击第1个按钮打印0，点击第2个按钮打印1，点击第3个按钮打印2 -->
+    <button>点击我打印0</button>
+    <button>点击我打印1</button>
+    <button>点击我打印2</button>
+
+</body>
+
+<script>
+    //最早的时候js在专业术语中认为：没有闭包所以产生了以下的问题
+    //在es6的角度理解就是var关键字没有块级作用域
+    var btns = document.getElementsByTagName("button")
+    var arr = Array.prototype.slice.apply(btns)
+    for(var i=0;i<arr.length;i++){
+        btns[i].onclick = function(){
+            alert(i)
+        }
+    }
+    alert("for执行完成后i="+i)  //在c++,java,c和golang中无法访问,因为以上语句都具有块级作用域,js中的es5使用var定义的变量没有块级作用域的概念
+</script>
+
+
+</html>

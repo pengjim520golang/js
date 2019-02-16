@@ -1,0 +1,14 @@
+<script>
+    //闭包的声明周期在默认的情况下：是在浏览器关闭的时候结束
+    //如果希望闭包被手动结束，我们可以把内部函数指向null,但是开发中很少编写这样的代码
+    function outer(){
+        var i = 0 
+        function inner(){
+            console.log(i);
+        }
+        return inner 
+    }
+    var fn = outer();
+    fn = null //手动结束闭包的生命周期，由于fn现在没有引用内部函数，而闭包在内部函数作用域中，因此没有引用情况下闭包就消失了
+    fn(); //报错
+</script>
