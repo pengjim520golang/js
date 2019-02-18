@@ -1,5 +1,5 @@
-//开发食物的模块
-(function(window){
+define(function(require,exports,module){
+    
     //定义食物的定位变量
     var position = "absolute"
     //声明一个专门用于装载食物的容器
@@ -19,6 +19,8 @@
     }
     //把食物渲染到地图当中
     Food.prototype.render = function(map){
+        //导入依赖工具模块
+        var Tools = require("./tools.js")
         //创建食物之前就清除食物
         clearFood()
         //创建食物
@@ -51,7 +53,6 @@
         }
     }
 
+    module.exports = Food 
 
-    //把食物对象暴露到全局当中
-    window.Food = Food;
-})(window)
+})

@@ -1,0 +1,21 @@
+<script>
+
+        //我们希望输出的顺序是one,two,three，使用同步的方式编写异步代码有可能会产生回调地狱，因此es6提出了异步解决方案
+    
+        setTimeout(function(){
+            console.log("one")
+            setTimeout(function(){
+                console.log("two")
+                setTimeout(function(){
+                    console.log("three")
+                },1000)
+            },2000)
+        },3000)
+    
+    
+
+    
+    
+
+    
+    </script>
