@@ -1,0 +1,23 @@
+<script>
+    //逻辑或： 如果左边为false则执行右边,在js中一般用于设置默认值
+    //逻辑与： 如果左边为true才执行右边,一般在js中用于定义回调函数
+    function define(callback){
+        callback&&callback()
+    }
+
+
+    // var obj = function(){console.log('111')} //new Function("console.log('1111')")
+    // //obj || console.log("xxxx")
+
+    // obj && obj()
+
+
+    define(function(){
+        console.log("hello")
+    }) ;
+
+
+    define(function(){
+        console.log("world")
+    }) ;
+</script>

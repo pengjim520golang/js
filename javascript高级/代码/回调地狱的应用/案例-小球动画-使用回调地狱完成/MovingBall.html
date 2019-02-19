@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回调地狱实现小球动画</title>
+
+
+    <style>
+        #wrap{
+            width: 400px;
+            height: 400px;
+            border: 2px solid #000;
+            position: absolute;
+            margin: auto;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+        }
+        
+        #wrap > div{
+            width: 20px;
+            height: 20px;
+            position: absolute; 
+            border-radius: 50%;  
+        }
+        #wrap > .redBall{
+            background: red;
+            margin-top:100px;
+        }
+
+        #wrap > .pinkBall{
+            background: pink;
+            margin-top:130px;
+        }
+
+        #wrap > .grayBall{
+            background: gray;
+            margin-top:160px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="redBall"></div>
+        <div class="pinkBall"></div>
+        <div class="grayBall"></div>
+    </div>
+</body>
+
+<script>
+
+    window.onload = function(){
+        var redBall = document.querySelector("#wrap > .redBall")
+        var pinkBall = document.querySelector("#wrap > .pinkBall")
+        var grayBall = document.querySelector("#wrap > .grayBall")
+
+
+        //ball - 哪个球滚动
+        //long - 滚了多远
+        //callback - 回调函数,用于执行下一个小球开始滚动的逻辑
+        function MovingBall(ball,long,callback){
+            var timer = setInterval(function(){
+                //获取当前小球的位置
+                var currentLeft = ball.offsetLeft;
+                //表示当前位置和long目标一致
+                if(currentLeft===long){
+                    callback&&callback()
+                    //停止运动
+                    clearInterval(timer)
+                }else if(currentLeft<long){
+                    currentLeft++
+                }else if(currentLeft>long){
+                    currentLeft--
+                }
+                ball.style.left = currentLeft + "px"
+            },10)
+        }
+
+        //让红色小球动起来
+        MovingBall(redBall,50,function(){
+            //让粉色小球动起来
+            MovingBall(pinkBall,100,function(){
+                //让灰色小球动起来
+                MovingBall(grayBall,150,function(){
+                    //让灰色小球动起来
+                    MovingBall(grayBall,100,function(){
+                        //让红色小球动起来
+                        MovingBall(redBall,100,function(){
+                            
+                        })
+                    })
+                })
+            })
+        })
+
+    }
+
+
+</script>
+
+
+</html>

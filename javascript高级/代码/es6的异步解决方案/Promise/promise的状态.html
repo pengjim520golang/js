@@ -1,0 +1,15 @@
+<script>
+    //promise对象的回调是同步，但是该对象是专门设计来解决异步问题（回调地狱）问题，因此promise实际上就是使用同步的方式编写异步的代码
+    //promise有3个状态:pengding,fullfilled(resolve),reject
+    var promise = new Promise(function(resolve,reject){
+        console.log("init promise")
+        //如果在promise的回调函数中执行resolve函数返回的就是fullfilled状态
+        //resolve()
+        //如果在promise的回调函数中执行reject函数返回的就是reject状态
+        reject()
+    })
+
+    //pengding状态：是new了之后就产生
+    console.log(promise)
+
+</script>

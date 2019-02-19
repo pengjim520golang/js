@@ -1,0 +1,26 @@
+<script>
+
+        var promise = new Promise(function(resolve,reject){
+            //调用resolve
+            resolve() //状态是fullfilled,触发事件机制resolveEvent()
+        })
+    
+    
+        //Promise.prototype.then()返回一个promise对象<状态是:pengding>
+        //then方法返回的promise对象的状态有由resolveEvent函数或者rejectEvent函数决定（一般没用）
+        //如果resolveEvent有return，那么then返回promise状态就是fullfilled
+        //如果return返回了一个是一个新的primise对象，则then由返回的promise对象的状态机决定
+        promise
+            .then(function(){
+                return new Promise(function(resolve,reject){
+                    reject()
+                })
+            })
+            .then(function(){
+                console.log("then promise status is fullfilled")
+            },function(){
+                console.log("then promise status is rejected")
+            })
+
+        
+    </script>

@@ -1,0 +1,16 @@
+<script>
+
+    var promise = new Promise(function(resolve,reject){
+        //调用resolve
+        //resolve() //状态是fullfilled,触发事件机制resolveEvent()
+        reject() //状态是rejected,触发事件机制rejectEvent()
+    })
+
+
+    //Promise.prototype.then(function resolveEvent(){},function rejectEvent(){})
+    promise.then(function(){
+        console.log("resolveEvent()")
+    },function(){
+        console.log("rejectEvent()")
+    })
+</script>
