@@ -1,0 +1,29 @@
+<script>
+    //定义一个父类(super class)（祖先构造函数）:用户类
+    class User{
+        //等同于function constructor，但是es6的class语法中不允许这样写
+        constructor(username,password,gender){
+            this.username = username 
+            this.password = password 
+            this.gender = gender  
+        }
+        //定义了showUserInfo方法
+        showUserInfo(){
+            console.log(this.username,this.gender)
+        }
+        //定义了showPassword方法
+        showPassword(){
+            console.log("password is "+this.password)
+        }
+    }
+
+
+  
+    var user = new User("zhangsan","123","fmale")
+    console.log(user)
+    user.showUserInfo()
+    user.showPassword()
+
+
+
+</script>

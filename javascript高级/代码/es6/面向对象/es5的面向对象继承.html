@@ -1,0 +1,48 @@
+<script>
+
+    //在一个电子商务平台中有用户系统：用户分为以下几种,普通用户，Vip用户...
+    //User是所有用户的祖先构造函数
+    function User(){
+
+    }
+
+    User.prototype.showUserInfo = function(){
+        console.log("showUserInfo function")
+    }
+
+    User.prototype.showPassword = function(){
+        console.log("showPassword function")
+    }
+
+
+    function NormalUser(){
+
+    }
+
+    NormalUser.prototype = new User() 
+    //注意点：在js的es5中继承需要修改prototype的原型对象指向的同时，修改prototype.constuctor为构造函数本身
+    NormalUser.prototype.constructor = NormalUser
+
+
+    function VipUser(){
+
+    }
+
+    VipUser.prototype = new User() 
+    VipUser.prototype.constructor = VipUser //切记，继承必须修改此代码
+
+
+    var normal = new NormalUser()
+    var vip = new VipUser()
+
+
+    normal.showUserInfo()
+    normal.showPassword()
+    console.log(normal)
+    vip.showUserInfo()
+    vip.showPassword()
+    console.log(vip)
+
+
+
+</script>

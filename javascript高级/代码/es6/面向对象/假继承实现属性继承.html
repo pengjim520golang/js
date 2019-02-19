@@ -1,0 +1,55 @@
+<script>
+    //假基础不是真正的继承，只是实现像继承一样的效果,假继承是es5的编程技巧，一般用于实现属性的继承，不实现方法的继承
+    //方法的继承必须使用原型对象指向的继承（真继承）
+    //因此在js如果希望实现方法和属性都被继承的结果就需要使用假继承+真继承两种方法，又称为组合继承
+
+
+
+//在一个电子商务平台中有用户系统：用户分为以下几种,普通用户，Vip用户...
+//User是所有用户的祖先构造函数
+function User(username,password,gender){
+    this.username = username 
+    this.password = password 
+    this.gender = gender  
+}
+
+User.prototype.showUserInfo = function(){
+    console.log(this.username,this.gender)
+}
+
+User.prototype.showPassword = function(){
+    console.log("password is ",this.password)
+}
+
+//使用call来修改this就实现假继承
+function NormalUser(username,password,gender,level){
+    User.call(this,username,password,gender) //找个是修改this，因此属于假继承
+
+    this.level = level 
+    //一旦实现了真继承，某些方法必须定义为构造函数本身的方法
+    this.showLevel = function(){
+        console.log("My Level is "+ this.level)
+    }
+}
+
+
+
+
+NormalUser.prototype = new User() 
+//注意点：在js的es5中继承需要修改prototype的原型对象指向的同时，修改prototype.constuctor为构造函数本身
+NormalUser.prototype.constructor = NormalUser
+
+
+
+
+
+var normal = new NormalUser("pengjin","123456789","male","Nomarl Level")
+
+
+
+normal.showUserInfo()//找原型对象 
+normal.showPassword() //找原型对象
+normal.showLevel() // 找本身
+
+
+</script>

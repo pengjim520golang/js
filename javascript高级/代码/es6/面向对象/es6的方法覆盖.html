@@ -1,0 +1,54 @@
+<script>
+
+//定义一个父类(super class)（祖先构造函数）:用户类
+class User{
+    //等同于function constructor，但是es6的class语法中不允许这样写
+    constructor(username,password,gender){
+        console.log("User constructor")
+        this.username = username 
+        this.password = password 
+        this.gender = gender
+        this.national = "Japan"  
+    }
+    //定义了showUserInfo方法
+    showUserInfo(){
+        console.log(this.username,this.gender)
+    }
+    //定义了showPassword方法
+    showPassword(){
+        console.log("password is "+this.password)
+    }
+}
+
+//VipUser类继承了User
+class VipUser extends User{
+    constructor(username,password,gender,level){
+        super(username,password,gender) //User.call(this,username,password,gender)
+        this.level = level
+        this.national = "China" //属性也可以覆盖
+    }
+
+    showLevel(){
+        console.log("My level is " + this.level)
+    }
+    //重名方法会覆盖父类的方法
+    showUserInfo(){
+        console.log("Vip ShowUserInfo=",this.username,this.level,this.gender)
+    }
+
+
+}
+
+
+var vip = new VipUser("zhangsan","987654","fmale","vip level")
+console.log(vip) 
+console.log("国籍:",vip.national) 
+vip.showLevel() //找本身
+vip.showUserInfo() //找本身，覆盖了父类的方法
+vip.showPassword() //找父类
+
+
+//es6的面向对象在实际开发中用于定义组件比较多，尤其是react
+
+
+</script>

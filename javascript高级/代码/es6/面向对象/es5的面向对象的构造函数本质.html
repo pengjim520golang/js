@@ -1,0 +1,19 @@
+<script>
+    //function是一个对象，其内部有一个叫做prototype(原型对象),原型对象的constructor是在new的时候被调用的
+    function Snake(){
+
+    }
+    //为什么new之后可以实现一个对象呢？所以是通过prototype(原型对象,Object)的构造函数实现的
+    var snake = new Snake()//Snake{}
+    console.log(snake)
+    //结论：在js中对象实例的原型对象等于构造函数的原型对象，构造函数原型对象的constructor方法等于构造函数对象本身
+    console.log(Snake.prototype.constructor)
+    console.log(Snake.prototype.constructor===Snake) // true ? false
+
+    /*
+    var obj = {} //new Object()
+    console.log(obj) //Object{}
+    
+
+    //{} ---> new Object()*/ 
+</script>
