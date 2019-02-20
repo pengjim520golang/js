@@ -1,0 +1,36 @@
+<script>
+
+    /**
+   自己实现一个这样的链式调用 promise.then().then().then().then()
+    **/
+
+    function MyPromise(callback){
+        this.then = function(resolveEvent,rejectEvent){
+            var promise = new MyPromise()
+            console.log("--",promise)
+            return promise;
+        }
+    }
+
+
+    var promise = new MyPromise( function(resolve,reject){
+
+    } )
+
+    promise
+        .then(()=>{
+
+        },()=>{
+
+        })
+        .then(()=>{
+
+        },()=>{
+
+        })     
+        .then(()=>{
+
+        },()=>{
+
+        }) 
+</script>

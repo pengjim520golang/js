@@ -1,0 +1,30 @@
+<script>
+
+
+    var arr = [11,33,55]
+    //定义迭代函数
+    function generatorArrIterator(arrObj){
+        //初始化迭代器对象开始的位置
+        var index = 0 
+        //返回的是迭代器对象
+        return {
+            //迭代器对象的next方法返回
+            next:function(){
+                //迭代对象
+                return index > arrObj.length-1 ? {value:undefined,done:true} : {value:arrObj[index++],done:false}
+            }
+        }
+    }
+    //获取迭代器对象使用迭代函数生成
+    var it = generatorArrIterator(arr)
+    //使用next方法移动指针,就返回一个迭代对象{value,done}
+    console.log( it.next() ) //{value:11,done:false}
+    console.log( it.next() ) //{value:33,done:false}
+    console.log( it.next() ) //{value:55,done:false}
+    console.log( it.next() ) //{value:undefined,done:true}
+
+
+
+
+
+</script>

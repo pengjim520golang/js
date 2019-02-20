@@ -1,0 +1,62 @@
+<script>
+    //实现在setTimeout执行过程中，按顺序输出one,two,three
+    //异步执行：在同多个代码逻辑中可以同时执行，上一个逻辑没有完成，不会影响下一个的执行
+    //同步执行：每一次只能执行一个逻辑,只有当前逻辑执行完成,才能进入下一个逻辑的执行
+    //同步的方式在编程实现却是异步执行的代码，如果没有回调地狱和es6异步方案，通常无法控制逻辑是顺序
+    /*
+    setTimeout( function(){
+        console.log("one")
+    },3000 )
+
+
+    //.....1000行代码，4秒
+
+
+    setTimeout( function(){
+        console.log("two")
+    },2000 )
+
+
+
+    setTimeout( function(){
+        console.log("three")
+    },1000 )
+    */
+
+    /** 使用了回调地狱
+    setTimeout(function(){
+        console.log("one")
+        setTimeout(function(){
+            console.log("two")
+            setTimeout(function(){
+                console.log("three")
+            },1000)
+        },2000)
+    },3000)
+    **/ 
+
+    var promise = new Promise(function(resolve,reject){
+        setTimeout( function(){
+            console.log("one")
+            resolve()
+        },3000 )  
+   })
+   promise
+        .then(function(){
+            return new Promise(function(resolve,reject){
+                setTimeout( function(){
+                    console.log("two")
+                    resolve()
+                },2000 )
+            })
+        })
+        .then(function(){
+            return new Promise(function(resolve,reject){
+                setTimeout( function(){
+                    console.log("three")
+                    resolve()
+                },1000 )
+            })
+        })
+
+</script>

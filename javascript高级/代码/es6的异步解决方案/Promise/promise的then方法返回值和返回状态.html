@@ -12,15 +12,24 @@
         //如果return返回了一个是一个新的primise对象，则then由返回的promise对象的状态机决定
         promise
             .then(function(){
-                return new Promise(function(resolve,reject){
-                    reject()
-                })
+
+            },function(){
+                
             })
             .then(function(){
-                console.log("then promise status is fullfilled")
+                
             },function(){
-                console.log("then promise status is rejected")
+
             })
+            .then(function(){
+                
+            },function(){
+
+            })
+
+
+
+  
 
         
     </script>

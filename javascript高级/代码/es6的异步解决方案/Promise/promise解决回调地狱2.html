@@ -1,0 +1,51 @@
+<script>
+ 
+
+
+
+
+
+
+
+    var promise = new Promise(function(resolve,reject){
+        setTimeout( function(flag){
+            if(flag){
+                console.log("one")
+            }else{
+                console.log("one one one")
+            }
+            resolve(flag)
+        },3000,true)  
+   })
+
+
+
+
+
+
+   promise
+        .then(function(data){
+            return new Promise(function(resolve,reject){
+                setTimeout( function(flag){
+                    if(flag){
+                        console.log("two")
+                    }else{
+                        console.log("two two two")
+                    }
+                    resolve(flag)
+                },2000,data)  
+            })
+        })
+        .then(function(data){
+            return new Promise(function(resolve,reject){
+                setTimeout( function(flag){
+                    if(flag){
+                        console.log("three")
+                    }else{
+                        console.log("three three three")
+                    }
+                    resolve(flag) //良好的编程习惯
+                },1000,data)  
+            })
+        })
+</script>
