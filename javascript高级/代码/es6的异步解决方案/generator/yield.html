@@ -1,0 +1,18 @@
+<script>
+
+        function * myGenerator(){
+            console.log("myGenerator -1")
+            yield 11; //暂停后面的执行
+            console.log("myGenerator -2")
+            yield 22; //暂停后面的执行
+            console.log("myGenerator -3")
+            yield 33; //暂停后面的执行
+            console.log("myGenerator -4")
+        }
+    
+        var it = myGenerator();
+        it.next() //启动myGenerator函数,在yield 11的位置被暂停了
+        it.next() //从yield 11开始启动，在yield 22的位置被暂停了
+        it.next() //从yield 22开始启动，在yield 33的位置被暂停了
+       
+</script>

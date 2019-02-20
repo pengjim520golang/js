@@ -1,0 +1,11 @@
+<script>
+    // function * 是一个关键字，用于定义generator函数，是es6特有的语法
+    //generator函数的本质就是迭代器函数,可以返回迭代器对象，但无需手动使用return返回
+    function * myGenerator(){
+        console.log("myGenerator function")
+    }
+
+    var it = myGenerator(); //it是迭代器对象
+    it.next() //迭代器对象的next返回迭代对象{value,done},并且会使得generator函数被执行
+    
+</script>

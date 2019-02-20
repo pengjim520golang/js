@@ -1,0 +1,30 @@
+<script>
+   
+    function * asyncExc(){
+
+        yield setTimeout(() => {
+                console.log("one")
+                it.next() //启动下一个yield
+              }, 3000);
+
+        yield setTimeout(() => {
+                console.log("two")
+                it.next() //启动下一个yield
+              }, 2000);
+
+        yield setTimeout(() => {
+                console.log("three")
+                it.next()
+              }, 1000);
+    }
+
+
+    var it = asyncExc(); 
+
+    it.next() //启动
+    
+    
+
+
+
+</script>

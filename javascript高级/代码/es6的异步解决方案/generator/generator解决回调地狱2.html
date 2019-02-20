@@ -1,0 +1,36 @@
+<script>
+    function * asyncExc(){
+
+       var y1 = yield setTimeout((flag) => {
+            if(flag){
+                console.log("one")
+            }else{
+                console.log("one one one~!")
+            }
+            it.next(flag)
+        }, 3000,false );
+
+       var y2 = yield setTimeout((flag) => {
+            if(flag){
+                console.log("two")
+            }else{
+                console.log("two two two~!")
+            }
+            it.next(flag)
+        }, 2000,y1 );
+
+
+       var y3 = yield setTimeout((flag) => {
+            if(flag){
+                console.log("three")
+            }else{
+                console.log("three three three~!")
+            }
+            it.next(flag)
+        }, 1000,y2 );
+
+    }
+
+    var it = asyncExc()  //返回迭代器对象
+    it.next() //启动函数的执行
+</script>

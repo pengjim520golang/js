@@ -1,0 +1,20 @@
+<script>
+
+    function * test(){
+        //1. yield的返回值是给迭代对象的
+        //2. 哪个next在我身上暂停，我就把当前的返回值给暂停在我身上的那个迭代对象
+        var y1 = yield 100; 
+        var y2 = yield 200; 
+    }
+
+
+    var it = test(); //返回迭代器对象
+    var obj1 = it.next() //启动generator函数，在yield 100的身上暂停，并且返回迭代对象,因此返回的迭代对象value=100
+    console.log(obj1)
+    var obj2 = it.next() //在yield 100的身上启动，在yield 200的身上暂停，并且返回迭代对象,因此返回的迭代对象value=200
+    console.log(obj2)
+    var obj3 = it.next() 
+    console.log(obj3)
+
+
+</script>

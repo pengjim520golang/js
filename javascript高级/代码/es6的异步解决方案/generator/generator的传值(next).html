@@ -1,0 +1,25 @@
+<script>
+
+    function * test(){
+        //1. yield之前的变量是由next方法的第1个参数进行传值
+        //2. next方法的传值规则:谁在yield的身上启动,谁就把自己的第1个参数给yield之前的变量
+        var y1 = yield 100; 
+        console.log("y1=",y1)
+        var y2 = yield 200; 
+        console.log("y2=",y2)
+    }
+
+
+    var it = test(); //返回迭代器对象
+    it.next("it-1") //启动了test函数,在yield100的身上停止了,it-1的参数没有用
+
+    it.next("it-2") //在yield 100的身上启动了，所以把it-2给了yield 100之前定义的变量y1
+
+
+    it.next("it-3") //在yield 200的身上启动了,所以把it-3给了yield 200之前定义的变量y2
+
+
+
+
+
+</script>
