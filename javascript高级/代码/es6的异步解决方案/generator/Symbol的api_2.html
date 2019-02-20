@@ -1,0 +1,11 @@
+<script>
+    //这个api在开发中没什么用
+    var sym = Symbol.for("Sym meimei")
+    //如果希望只能知道当前用for声明的Symbol叫什么名字可以使用keyFor去获取名字
+    console.log( Symbol.keyFor(sym) )
+
+    //注意，如果不是使用for定义的Symbol，则无法使用keyFor获取当前Symbol的名字
+    var zs = Symbol("zhangsan")
+    console.log( Symbol.keyFor(zs) ) //获取不了
+
+</script>

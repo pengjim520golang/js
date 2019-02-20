@@ -1,0 +1,29 @@
+<script>
+    //这种在开发中没什么用
+
+    var zhangsan = {
+        name:"zhangsan",
+        age:33,
+        //如果要使用Symbol数据类型作为对象的属性必须要使用[]
+        [Symbol("idCard")]:"4401xxxxxxxxxx"
+    }
+
+    console.log(zhangsan)
+    console.log("id card:",zhangsan[Symbol("idCard")])
+
+
+    //如果希望使用Symbol定义对象中的属性，必须使用变量进行引用
+    var idCard = Symbol("id")
+
+    var lisi = {
+        name:"lisi",
+        age:44,
+        //如果要使用Symbol数据类型作为对象的属性必须要使用[]
+        [idCard]:"4409yyyyyyy"
+    }
+
+    console.log(lisi)
+    console.log("id card:",lisi[idCard])
+
+
+</script>

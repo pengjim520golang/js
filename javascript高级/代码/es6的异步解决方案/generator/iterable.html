@@ -1,0 +1,27 @@
+<div id="one">div-1</div>
+<div id="sec">div-2</div>
+<div id="third">div-3</div>
+
+
+<script>
+/**
+    原生具备 Iterator 接口的数据结构如下。
+            Array
+            String
+            函数的 arguments 对象
+            NodeList 对象
+            Map
+            Set
+**/
+    var str = "pengjin"
+    for(var item of str){
+        console.log(item)
+    }
+
+
+    var divs = document.querySelectorAll("div")
+    console.log(divs)
+    for(var div of divs){
+        console.log(div)
+    }
+</script>

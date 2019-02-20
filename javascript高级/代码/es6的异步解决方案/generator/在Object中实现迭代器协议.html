@@ -1,0 +1,39 @@
+<script>
+
+    var zs = {
+        name:"Mr.Zhang",
+        age : 34,
+        gender:"male"
+    }
+
+    zs[Symbol.iterator] = function(){
+
+        var arrObj = [] 
+
+        for(var key in this){
+            arrObj.push(this[key])
+        }
+
+
+
+        //初始化迭代器对象开始的位置
+        var index = 0 
+        //返回的是迭代器对象
+        return {
+            //迭代器对象的next方法返回
+            next:function(){
+                //迭代对象
+                return index > arrObj.length-1 ? {value:undefined,done:true} : {value:arrObj[index++],done:false}
+            }
+        }
+    }
+    console.log(zs)
+    //如果希望给zs实例对象实现for...of就必须实现迭代器函数(Symbol.iterator)
+
+
+    for(var item of zs){
+        console.log("~",item)
+    }
+
+
+</script>

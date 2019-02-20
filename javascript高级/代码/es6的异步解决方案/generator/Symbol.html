@@ -1,0 +1,23 @@
+<script>
+
+    //Symbol是es6中的基本数据类型,es6中的基本数据类型包括string number null undefined boolean Symbol
+    //Symbol的功能就是作为唯一标识符来使用
+    //Symbol最核心的东西叫做Symbol.iterator(唯一需要重视和学习的)
+
+    var sym1 = Symbol()  //本质上Symbol就是一个函数
+    var sym2 = Symbol()  
+
+    //Symbol是唯一的，就算两者看起来一样，都实际上是不一样的
+    console.log( sym1 === sym2 , sym1,sym2) 
+
+    //Symbol的定义一般会给一个名字
+    var sym3 = Symbol("sym3")
+    var sym4 = Symbol("sym4")
+    console.log( sym3 === sym4 , sym3,sym4) 
+
+    //注意：就算两个名字一样的Symbol那么也是不===的
+    var sym5 = Symbol("foo")
+    var sym6 = Symbol("foo")
+    console.log( sym5 === sym6 , sym5,sym6)   
+    
+</script>

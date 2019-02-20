@@ -1,0 +1,13 @@
+<script>
+    //这个api在开发中没什么用
+    var sym1 = Symbol.for("sym")
+    var sym2 = Symbol.for("sym")
+    //希望如下的值是true
+    console.log( sym1===sym2 )
+
+    var sym3 = Symbol.for("sym3")
+    var sym4 = Symbol.for("sym4")
+    //Symbol.for找个api设置Symbol如果名字一样则是同一个Symbol，如果for的名字不一样则设置了2个不同的Symbol
+    console.log( sym3===sym4 )
+
+</script>

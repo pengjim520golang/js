@@ -1,0 +1,11 @@
+<script>
+     var arr = ["a","b","c"]
+     console.log( arr[Symbol.iterator] ) //返回迭代器函数
+
+     var it = arr[Symbol.iterator](); //调用迭代器函数返回迭代器对象
+
+     console.log( it.next() ) //  {value:a,done:false}
+     console.log( it.next() ) //  {value:b,done:false}
+     console.log( it.next() ) //  {value:c,done:false}
+     console.log( it.next() ) //  {value:undefined,done:true}
+</script>
