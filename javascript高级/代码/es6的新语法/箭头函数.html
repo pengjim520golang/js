@@ -1,0 +1,22 @@
+<script>
+
+     let arr = [11,77,22,1,33,2,44,3,55]
+     //arr.map( item=>console.log(item)  )
+    // //es5:function的回调方式看起来比较罗嗦
+    // arr.map( function(item){
+    //     console.log(item)
+    // } )
+    // //es6可以使用箭头函数优化以上代码的风格
+    // arr.map( (item)=>{
+    //     console.log(item)
+    // })    
+    // //es6如果箭头函数的参数只有一个()可以不写
+    // arr.map( item=>{
+    //     console.log(item)
+    // })   
+
+
+    arr.sort((a,b)=>b-a)
+    alert(arr)
+      
+</script>

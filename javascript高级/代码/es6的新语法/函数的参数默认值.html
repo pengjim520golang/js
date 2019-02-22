@@ -1,0 +1,23 @@
+<script>
+
+    // function userInfo(name,age,gender){
+    //     name = name || "zhangsan"
+    //     age = age || 18
+    //     gender = gender || "male"
+
+    //     console.log(name,age,gender)
+    // }
+
+
+    // userInfo();
+
+
+    function userInfo(name="zhangsan",age=44,gender="male"){
+        console.log(name,age,gender)
+    }
+
+    userInfo(); //zhangsan 44 male
+    userInfo("lisi") //lisi 44 male
+    userInfo("wangwu",66) //wangwu 66 male
+
+</script>

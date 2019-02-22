@@ -1,0 +1,14 @@
+<script>
+
+    let arr = [11,22,33,44]
+    let obj = {test:"change this is obj"}
+    //如果是箭头函数无法修改this的指向
+    arr.forEach( item=>console.log(this),obj )
+    //以下function作为关键字的函数可以在回调中修改this的指向
+    arr.forEach( function(item){
+        console.log(this)
+    },obj )
+
+
+
+</script>

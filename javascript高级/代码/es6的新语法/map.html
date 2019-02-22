@@ -1,0 +1,50 @@
+<script>
+
+    let map = new Map([ ["name","pengjin"],["age",33],["gender","fmale"] ])
+    console.log(map)
+    //一般使用add方法添加key=>value到map中
+    let map2 = new Map()
+    map2.set("index",100)
+    map2.set("item","壹佰")
+    console.log(map2)
+
+    //可以通过size获取一个map对象有多少个元素
+    console.log(map.size,map2.size )
+
+    //获取单个值
+    console.log(map2.get("item") )
+
+    //删除key为item的值
+    map2.delete("item")
+    console.log(map2)
+
+    //判断一个键是否存在
+    let map3 = new Map()
+    map3.set("id",100)
+    map3.set("username","zhangsan")
+
+    console.log( map3.has("id") ) //true
+
+    console.log( map3.has("password") )//false
+
+
+    //map的遍历所有的键
+    let keysOfMap3 = map3.keys()
+    for(let key of keysOfMap3){
+        console.log(key)
+    }
+    
+    //map的遍历所有的值
+    let valsOfMap3 = map3.values()
+    for(let v of valsOfMap3){
+        console.log(v)
+    }
+    
+
+    //map的遍历所有的键值对
+    let kvs = map3.entries()
+    for(let kv of kvs){
+        console.log(kv)
+    }
+    
+</script>

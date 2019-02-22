@@ -1,0 +1,31 @@
+<script>
+
+    let set = new Set() 
+    let obj = {name:"zhangsan"}
+
+    //添加数据到set中使用add方法
+    set.add("pengjin")
+    set.add(100)
+    set.add(obj)
+
+    console.log(set)
+
+    //遍历当前的set可以使用for..of语句，因为set内部实现了迭代器协议(Symbol.iterator)
+
+    for(let item of set){
+        console.log(item)
+    }
+
+    //删除set中的数据是根据数据内容本身删除
+
+    set.delete("pengjin")
+    set.delete(obj) //注意：set一般不要放对象，放对象使用map，因为set无法删除对象,如果要放置对象并希望删除需要通过变量进行引用
+    console.log(set)
+
+
+    //set的清除
+    let set1 = new Set([11,22,33]) 
+    set1.clear() //一次性删除所有的set元素
+    console.log(set1)
+
+</script>
