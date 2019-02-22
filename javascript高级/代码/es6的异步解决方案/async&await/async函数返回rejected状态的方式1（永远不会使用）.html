@@ -1,0 +1,10 @@
+<script>
+    //使用async function定义async函数
+    async function demo(){
+        //第1种方式(不会使用的方式):抛出异常
+        throw new Error("我们的定义异常信息:错误了~！")
+    }
+
+    var promise = demo() ; 
+    console.log(promise)
+</script>

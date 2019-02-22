@@ -1,0 +1,42 @@
+<script>
+
+    async function asyncSetTimeout(){
+        var a1 = await new Promise( (resolve,reject)=>{
+            setTimeout( (flag)=>{
+                if(flag){
+                    console.log("one")
+                }else{
+                    console.log("1111")
+                }
+                resolve(flag)
+            } , 1000 , true )
+        } )
+
+        var a2 = await new Promise( (resolve,reject)=>{
+            setTimeout( (flag)=>{
+                if(flag){
+                    console.log("two")
+                }else{
+                    console.log("2222")
+                }
+                resolve(flag)
+            } , 500 , a1 )
+        } )
+
+
+        var a3 = await new Promise( (resolve,reject)=>{
+            setTimeout( (flag)=>{
+                if(flag){
+                    console.log("three")
+                }else{
+                    console.log("3333")
+                }
+                resolve(flag)
+            } , 300 , a2 )
+        } )
+
+    }
+
+    asyncSetTimeout()
+
+</script>

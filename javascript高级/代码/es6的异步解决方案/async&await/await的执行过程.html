@@ -1,0 +1,19 @@
+<script>
+    //使用async function定义async函数
+    async function demo(){
+        //如果调用的是resovle，那么await就等到了一个promise状态为resolved的对象
+       await new Promise( (resolve,reject)=>{
+                console.log("aaa")
+                //resolve()
+                reject("pengjin is error")
+             })
+
+       await new Promise( (resolve,reject)=>{
+                console.log("bbb")
+                
+            })
+    }
+
+    var promise = demo() ; 
+
+</script>

@@ -1,0 +1,17 @@
+<script>
+
+       
+    async function demo(){
+       //a1只能通过resolve传值
+       var a1 = await new Promise( (resolve,reject)=>{
+                    resolve("hahaha")
+                })
+
+       await new Promise( (resolve,reject)=>{
+                console.log("a1="+a1)
+                
+            })
+    }
+
+    var promise = demo() ; 
+</script>

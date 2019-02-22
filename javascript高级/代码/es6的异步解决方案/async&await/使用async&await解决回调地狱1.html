@@ -1,0 +1,30 @@
+<script>
+
+    async function asyncSetTimeout(){
+        await new Promise( (resolve,reject)=>{
+            setTimeout( ()=>{
+                console.log("one")
+                resolve()
+            } , 3000)
+        } )
+
+
+        await new Promise( (resolve,reject)=>{
+            setTimeout( ()=>{
+                console.log("two")
+                resolve()
+            } , 2000)
+        } )
+
+        await new Promise( (resolve,reject)=>{
+            setTimeout( ()=>{
+                console.log("three")
+                resolve()
+            } , 1000)
+        } )
+
+    }
+
+    asyncSetTimeout()
+
+</script>
