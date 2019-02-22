@@ -1,0 +1,31 @@
+<button>btn-1</button>
+<button>btn-2</button>
+<button>btn-3</button>
+
+<script>
+
+    var i = 100  
+    for(var i=0;i<=10;i++){
+
+    }
+
+    console.log(i) //可以访问到i 
+   
+
+
+    //点击按钮btn-1，btn-2，btn-3，打印0，1,2
+
+    var btns = document.getElementsByTagName("button")
+    //转换btns为真数组
+    var items = Array.prototype.slice.apply(btns)
+    
+    for(var i=0;i<items.length;i++){
+        (function(i){
+            btns[i].onclick = function(){
+                alert(i)
+            }
+        })(i)
+    }
+
+
+</script>

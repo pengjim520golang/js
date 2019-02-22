@@ -1,0 +1,23 @@
+<script>
+    const arr = [1,2,3,4,5] 
+    arr[0] = 100 //arr引用的数组本身是可以修改的
+    console.log(arr)
+
+    const obj = {name:"pengjin",age:33}
+    obj.age = 34 
+    console.log(obj)
+
+
+    //如果希望const被引用的数组不可以被修改，需要冻结该数组(es6的语法)
+    const arr2 = [100,200,300]
+    Object.freeze(arr2) //冻结arr2 
+    arr2[0] = 999
+    console.log("arr2=",arr2)
+
+
+    const obj1 = {name:"pengjin",age:33}
+    Object.freeze(obj1) //冻结obj1
+    obj1.age = 34 
+    console.log(obj1)
+
+</script>

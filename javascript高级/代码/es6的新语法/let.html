@@ -1,0 +1,37 @@
+<button>btn-1</button>
+<button>btn-2</button>
+<button>btn-3</button>
+
+<script>
+
+    let a = 100
+    //let a = 100 #报错,重复定义会报错
+
+    a = 200 //a可以被修改
+
+    console.log(a)
+
+    //i定义在()块级作用域中
+    //for语句()和{}是两个块级作用域，所以()中的let变量和{}的let变量无关
+    //for语句{}作用域可以看到()作用域的东西,但他们的声明变量不会重定义
+    //{}作用域中定义的变量优先于()作用域中的，如果{}中有该变量会被优先使用
+    for(let i=0;i<10;i++){
+        let i = 100
+        console.log(i)  //100打印10次
+    }
+    //console.log(i) // 报错,i没有被定义
+
+
+    //点击按钮btn-1，btn-2，btn-3，打印0，1,2
+    let btns = document.getElementsByTagName("button")
+    //转换btns为真数组
+    let items = Array.prototype.slice.apply(btns)
+    //let内部的本质也有闭包
+    for(let i=0;i<items.length;i++){
+            btns[i].onclick = function(){
+                alert(i)
+            }
+    }
+
+
+</script>
