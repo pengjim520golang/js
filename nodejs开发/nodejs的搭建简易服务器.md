@@ -150,7 +150,7 @@ server.listen(8891,()=>{
 ```
 
 
-# nodejs的数据解析
+# nodejs的数据解析Get请求
 
 使用原始的方式处理Get的结果
 
@@ -211,4 +211,82 @@ let server = http.createServer((request,response)=>{
 }) 
 
 server.listen(8892)
+```
+
+使用url模块的parse方法获取get参数
+
+```javascript
+const http = require("http")
+//引入Url模块
+const url = require("url")
+const server = http.createServer( (request,response)=>{
+    let urlInfo = request.url
+    if(urlInfo.indexOf("?")!==-1){
+        //true表示把query转为对象
+        let pathInfo = url.parse( urlInfo,true ) 
+        console.log(pathInfo.query)
+        response.end()
+    }
+
+} );
+
+server.listen(8892)
+```
+
+# nodejs的数据解析Post请求
+
+```javascript
+const http = require("http")
+const queryString = require("querystring")
+http.createServer( (request,response)=>{
+    let POST = {}
+    let postData = "";
+    let i = 0 
+    //request.on的事件其中有2种事件:
+    //'data'事件:每接收数据一次就被触发一次,回调函数的第1个参数就是客户端传过来的数据
+    //'end'事件:完全接收结束就备触发
+    request.on('data',(data)=>{
+        console.log("第"+ (++i) +"次获取\n\n")
+        postData += data 
+    })
+
+    request.on("end",()=>{
+        console.log("获取完成"+postData)
+        //把post的查询字符串变为对象{username:"zs",password:"123",content:"HELLO"}
+        POST = queryString.parse(postData) 
+        //使用POST对象获取对应表单字段
+        console.log( POST.username,POST.password,POST.content  ) 
+         
+        
+    })
+
+
+} ).listen(8892);
+
+```
+
+# fs模块
+
+```
+fs.readFile() //用于读取服务器磁盘中的文件
+```
+
+```javascript
+const http = require("http")
+//把文件系统模块导入
+const fs = require("fs")
+http.createServer( (request,response)=>{
+    //err如果读取文件失败,err就为错误对象
+    //data如果读取成功,则data是文件中的内容
+    fs.readFile("./www/post.html",(err,data)=>{
+        if(!err){
+            response.write(data)
+            
+        }else{
+            response.write("read file failed~!")
+        }
+        response.end()
+    })
+
+} ).listen(8892);
 ```
