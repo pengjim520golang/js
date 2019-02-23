@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            font-size:16px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    
+        用户名:<input type="text" name="username" id="username">
+        密码:<input type="password" name="password" id="password">
+       
+        <button type="submit" id="regBtn">注册</button>
+        <button type="submit" id="loginBtn">登录</button>
+   
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.7.1/jquery.min.js"></script>
+
+<script>
+
+    $(function(){
+        //实现注册逻辑
+        $("#regBtn").on("click",function(){
+            var username = $("#username").val() //获取用户输入的用户名
+            var password = $("#password").val() //获取密码
+            $.ajax({
+                url:"/user?action=register",
+                data:"username=" + username + "&password=" + password,
+                type:"post",
+                dataType:"json",
+                success:function(json){
+                    if(json.status==0){
+                        alert(json.message)
+                    }else{
+                        alert("状态码:"+json.status+",失败原因:"+json.message)
+                    }
+                }
+            })
+        })
+        //实现登录逻辑
+        $("#loginBtn").on("click",function(){
+            var username = $("#username").val() //获取用户输入的用户名
+            var password = $("#password").val() //获取密码
+            $.ajax({
+                url:"/user?action=login",
+                data:"username=" + username + "&password=" + password,
+                type:"post",
+                dataType:"json",
+                success:function(json){
+                    if(json.status==0){
+                        alert(json.message)
+                    }else{
+                        alert("状态码:"+json.status+",失败原因:"+json.message)
+                    }
+                }
+            })
+        })
+
+
+    })
+</script> 
+
+</html>
