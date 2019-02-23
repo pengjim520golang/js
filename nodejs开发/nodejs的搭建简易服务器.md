@@ -112,7 +112,7 @@ reponse参数:response负责把服务器的响应返回给客户端
 
 * response.end()表示服务器响应结束,出现在reponse.write之后
 
-```javascript```
+```javascript
 //引入http系统模块
 const http = require("http")
 //建立一个服务器
