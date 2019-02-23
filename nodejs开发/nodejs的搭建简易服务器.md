@@ -20,3 +20,114 @@ nvm use nodejs的版本号  --- 切换nodejs的版本
 
 # nodejs的http模块
 
+http模块是nodejs提供的系统模块,也就是无需我们自己下载和编写完成的模块化功能.nodejs采用commonjs的模块化方案，如果我们需要使用系统模块
+则需要引入该模块的依赖：
+
+```javascript
+const http = require("http")
+```
+
+> 注意:nodejs是一个后端的运行平台不具备任何dom操作的功能,document.getElementById在nodejs当中完全没有任何意义,所有与nodejs开发相关的文件或者目录命名不能含有中文和特殊字符.所有nodejs的代码文件都必须使用.js作为后缀名
+
+
+### createSever
+
+createSever是http模块对象的方法,功能用于建立一个服务器对象实例.语法格式如下:
+
+```
+let server = http.createServer(回调函数) 
+```
+
+代码示例1(index.js)：
+
+```javascript
+//引入http系统模块
+const http = require("http")
+//建立一个服务器
+let server = http.createServer(()=>{}) 
+
+console.log(server)
+```
+
+运行以上代码需要使用node命令:
+
+```
+项目目录路径>node index.js
+```
+
+在nodejs当中假设修改了nodejs的代码，必须重新编译一次。
+
+
+代码示例2(index_1.js)
+
+```javascript
+//引入http系统模块
+const http = require("http")
+//建立一个服务器
+let server = http.createServer(()=>{
+    console.log("有人访问了我~!")
+}) 
+
+
+//服务器的实例对象有一个listen方法，用于定义服务器中的端口
+server.listen(8890)
+```
+
+代码示例3(index_2.js)
+
+```javascript
+//引入http系统模块
+const http = require("http")
+//建立一个服务器
+let server = http.createServer(()=>{
+    console.log("有人访问了我~!")
+}) 
+
+
+//服务器的实例对象有一个listen方法，用于定义服务器中的端口
+//listen回调函数在服务器成功建立后被触发
+server.listen(8890,()=>{
+    console.log("服务器启动成功,请访问地址:","http://localhost:8890")
+})
+```
+
+服务器的listen回调函数只会在服务器创建成功后触发,一个端口只能够用于一个服务器的创建当中
+
+
+## createServer方法的回调函数中的参数
+
+
+```
+const server = http.createServer( (request,response)=> )
+```
+
+request参数:request负责获取客户端对服务器中的请求
+
+
+
+
+reponse参数:response负责把服务器的响应返回给客户端
+
+* response.write是页面的响应输出,返回字符串到浏览器当中
+
+* response.end()表示服务器响应结束,出现在reponse.write之后
+
+```javascript```
+//引入http系统模块
+const http = require("http")
+//建立一个服务器
+let server = http.createServer((request,response)=>{
+    console.log("有人访问了我~!") //console.log是命令行的响应输出
+    response.write("Hello Welcome to Nodejs Server")      //response.write是页面的响应输出和response.end结合
+    response.end() //表示服务器响应结束
+
+    //response.end("Hi Everyone~!") //高版本的nodejs支持reponse.write的封装
+}) 
+
+
+//服务器的实例对象有一个listen方法，用于定义服务器中的端口
+//listen回调函数在服务器成功建立后被触发
+server.listen(8891,()=>{
+    console.log("服务器启动成功,请访问地址:","http://localhost:8890")
+})
+```
