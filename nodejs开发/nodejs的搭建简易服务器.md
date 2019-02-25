@@ -292,17 +292,16 @@ http.createServer( (request,response)=>{
 ```
 
 
-
-
-
-
-
-
-
-# npm的淘宝镜像
+# npm的淘宝镜像和express的安装
 
 npm是随着nodejs的安装而安装的，然而如果我们需要把npm的镜像修改为淘宝镜像需要执行以下命令:
 
 ```
 npm install -g cnpm --registry=https://registry.npm.taobao.org
+```
+
+使用cnpm安装express
+
+```
+cnpm install express --save
 ```
