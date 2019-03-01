@@ -1,0 +1,1 @@
+console.log( __dirname + "/upload/one.txt" ) //返回是当前执行文件所在工作目录的全路径
